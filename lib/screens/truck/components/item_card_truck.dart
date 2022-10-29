@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/models/Truck.dart';
+import 'package:shop_of_vehicles/constant/constants.dart';
+
+class ItemCardTruck extends StatelessWidget {
+  final Truck? truck;
+  final VoidCallback? press;
+  const ItemCardTruck({
+    Key? key,
+    this.truck,
+    this.press,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              // For  demo we use fixed height  and width
+              // Now we dont need them
+              // height: 180,
+              // width: 160,
+              decoration: BoxDecoration(
+                //color: product!.color,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Hero(
+                tag: "${truck!.id}",
+                child: Image.asset(truck!.image),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
+            child: Text(
+              // products is out demo list
+              truck!.title,
+              style: const TextStyle(color: kTextLightColor),
+            ),
+          ),
+          Text(
+            "\$${truck!.price}",
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          )
+        ],
+      ),
+    );
+  }
+}
