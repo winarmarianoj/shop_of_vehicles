@@ -34,10 +34,6 @@ class DetailsScreenCar extends StatelessWidget {
           icon: SvgPicture.asset("assets/icons/search.svg"),
           onPressed: () {},
         ),
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/cart.svg"),
-          onPressed: () {},
-        ),
         const SizedBox(width: kDefaultPaddin / 2)
       ],
     );

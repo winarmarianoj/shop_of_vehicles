@@ -1,15 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/models/Truck.dart';
+import 'package:shop_of_vehicles/models/Car.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
 
-class CarouselTruck extends StatelessWidget {
-  CarouselTruck({
+class CarouselCar extends StatelessWidget {
+  CarouselCar({
     Key? key,
-    required this.truck,
+    required this.car,
   }) : super(key: key);  
 
-  final Truck truck;
+  final Car car;
 
   @override
   Widget build(BuildContext context) {        
@@ -29,9 +29,9 @@ class CarouselTruck extends StatelessWidget {
                 enlargeStrategy: CenterPageEnlargeStrategy.height,
                 autoPlayInterval: Duration(seconds: 2),
               ),
-              itemCount: truck.photos.length,              
+              itemCount: car.photos.length,              
               itemBuilder:(context, index, realIndex) {
-                return buildImage(truck.photos[index]);
+                return buildImage(car.photos[index]);
               },
             ), 
           ),

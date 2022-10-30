@@ -15,40 +15,44 @@ class ItemCardCar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: press,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              // For  demo we use fixed height  and width
-              // Now we dont need them
-              // height: 180,
-              // width: 160,
-              decoration: BoxDecoration(
-                //color: product!.color,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Hero(
-                tag: "${car!.id}",
-                child: Image.asset(car!.image),
+      child: Card(          
+          color: Color.fromARGB(255, 4, 2, 100),
+          child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                // For  demo we use fixed height  and width
+                // Now we dont need them
+                // height: 180,
+                // width: 160,
+                decoration: BoxDecoration(
+                  //color: product!.color,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Hero(
+                  tag: "${car!.id}",
+                  child: Image.asset(car!.image),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-            child: Text(
-              // products is out demo list
-              car!.title,
-              style: const TextStyle(color: kTextLightColor),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
+              child: Text(
+                // products is out demo list
+                car!.title,
+                style: const TextStyle(color: kTextItemCardTitle),
+              ),
             ),
-          ),
-          Text(
-            "\$${car!.price}",
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          )
-        ],
-      ),
+            Text(
+              "\$${car!.price}",
+              style: const TextStyle(fontWeight: FontWeight.bold,
+              color: kTextItemCardPrice),
+            )
+          ],
+        ),
+      ), 
     );
   }
 }

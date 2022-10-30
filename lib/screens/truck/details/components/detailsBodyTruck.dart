@@ -7,8 +7,8 @@ import 'descriptionTruck.dart';
 
 class DetailsBodyTruck extends StatelessWidget {
   final Truck truck;
-
   const DetailsBodyTruck({Key? key, required this.truck}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     // It provide us total height and width
