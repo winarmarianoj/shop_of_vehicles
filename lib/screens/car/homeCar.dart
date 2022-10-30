@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
 import 'package:shop_of_vehicles/screens/car/components/bodyCars.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
+import 'package:shop_of_vehicles/screens/van/homeVan.dart';
 
 class HomeCar extends StatelessWidget{
   const HomeCar(BuildContext context, {Key? key}) : super(key: key);
@@ -30,7 +31,16 @@ class HomeCar extends StatelessWidget{
             // By default our  icon color is white
             color: kTextColor,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeVan(
+                  context,
+                ),
+              ),
+            );
+          },
         ),
         IconButton(
           icon: SvgPicture.asset(

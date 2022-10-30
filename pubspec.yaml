@@ -69,6 +69,7 @@ flutter:
     - assets/icons/
     - assets/cars/
     - assets/truks/
+    - assets/vans/
     - assets/image/
     - assets/truks/Ford18312006/
     - assets/truks/IvecoCursor3302015/
@@ -82,6 +83,12 @@ flutter:
     - assets/cars/Peugeot2082021/
     - assets/cars/ToyotaCorolla2021/
     - assets/cars/VolkswagenTigualAllspace2021/
+    - assets/vans/AudiQ42013/
+    - assets/vans/FordBroncoSports2022/
+    - assets/vans/KiaSorento2008/
+    - assets/vans/MercedesClaseG2017/
+    - assets/vans/SuzukiGrandVitara2008/
+    - assets/vans/ToyotaSw42021/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

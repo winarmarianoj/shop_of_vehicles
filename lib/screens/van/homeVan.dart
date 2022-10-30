@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
-import 'package:shop_of_vehicles/screens/truck/components/bodyTrucks.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
-import 'package:shop_of_vehicles/screens/van/homeVan.dart';
+import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
+import 'package:shop_of_vehicles/screens/van/components/bodyVans.dart';
 
-class HomeTruck extends StatelessWidget{
-  const HomeTruck(BuildContext context, {Key? key}) : super(key: key);
+class HomeVan extends StatelessWidget{
+  const HomeVan(BuildContext context, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: const BodyTrucks(),
+      body: const BodyVans(),
     );
   }
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 15, 157, 228),
+      backgroundColor: Color.fromARGB(255, 2, 128, 96),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
@@ -27,7 +27,7 @@ class HomeTruck extends StatelessWidget{
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
-            "assets/icons/camioneta.svg",
+            "assets/icons/truck.svg",
             // By default our  icon color is white
             color: kTextColor,
           ),
@@ -35,7 +35,7 @@ class HomeTruck extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeVan(
+                builder: (context) => HomeTruck(
                   context,
                 ),
               ),
