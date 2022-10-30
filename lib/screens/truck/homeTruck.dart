@@ -57,14 +57,6 @@ class HomeTruck extends StatelessWidget{
           ),
           onPressed: () {},
         ),
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/cart.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
-          onPressed: () {},
-        ),
         const SizedBox(width: kDefaultPaddin / 2)
       ],
     );

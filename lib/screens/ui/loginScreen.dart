@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
-import 'package:shop_of_vehicles/screens/home/home.dart';
+import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/decorations/input_decorations.dart';
 import 'package:shop_of_vehicles/screens/ui/widgets/auth_background.dart';
 import 'package:shop_of_vehicles/screens/ui/widgets/card_container.dart';
 import 'package:provider/provider.dart';
-
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -63,7 +62,7 @@ class _LoginForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: 'john.doe@gmail.com',
+                  hintText: 'tucasilladeemail@gmail.com',
                   labelText: 'Correo electrónico',
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => loginForm.email = value,
@@ -121,19 +120,16 @@ class _LoginForm extends StatelessWidget {
                       // TODO: validar si el login es correcto
 
                       //loginForm.isLoading = false;
-
-                      //Navigator.pushReplacementNamed(context, const Home());
-                                            
+                      //Navigator.pushReplacementNamed(context, const Home());                                            
                       /*Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const Home(),
                         ),
                       );*/
-
                       //Navigator.of(context).push(Home.route());
                       // ignore: use_build_context_synchronously
                       //Navigator.push(context, MaterialPageRoute(builder: (_) => const Home()));
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => Home())));
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck(context))));
 
                     }
             ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
-import 'package:shop_of_vehicles/screens/truck/details/components/productTitleWithImageTruck.dart';
+import 'package:shop_of_vehicles/screens/truck/details/components/carouselTruck.dart';
+import 'package:shop_of_vehicles/screens/truck/details/components/priceAndContactTruck.dart';
 import 'descriptionTruck.dart';
 
 class DetailsBodyTruck extends StatelessWidget {
@@ -17,30 +18,39 @@ class DetailsBodyTruck extends StatelessWidget {
         children: <Widget>[
           SizedBox(
             height: size.height,
-            child: Stack(
+            child: Stack(              
               children: <Widget>[
+                Image.asset(
+                  "assets/image/fondo1.jpg",
+                  width: 500,
+                  height: 800,
+                  fit: BoxFit.cover,
+                ),
                 Container(
-                  margin: EdgeInsets.only(top: size.height * 0.11),
+                  margin: EdgeInsets.only(top: size.height * 0.04),
                   padding: EdgeInsets.only(
-                    top: size.height * 0.10,
-                    left: kDefaultPaddin,
-                    right: kDefaultPaddin,
+                    top: size.height * 0.04,
+                    left: kDefaultPaddin/2,
+                    right: kDefaultPaddin/2,
                   ),
-                  height: 1000,
+                  height: 700,
                    decoration: const BoxDecoration(
-                    color: Colors.cyan,
+                    color: kFondo,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
+                      topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
                     ),
                   ),
                   child: Column(
                     children: <Widget>[                                            
                       DescriptionTruck(truck: truck),
                       const SizedBox(height: kDefaultPaddin / 2),                                  
-                      ProductTitleWithImageTruck(truck: truck),
-                      //AddToCartTruck(truck: truck),
+                      CarouselTruck(truck: truck),
                       const SizedBox(height: kDefaultPaddin / 2),
+                      PriceAndContactTruck(truck: truck),
+                      const SizedBox(height: kDefaultPaddin / 2),                      
                     ],
                   ),                  
                 ),

@@ -15,40 +15,44 @@ class ItemCardTruck extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: press,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              // For  demo we use fixed height  and width
-              // Now we dont need them
-              // height: 180,
-              // width: 160,
-              decoration: BoxDecoration(
-                //color: product!.color,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Hero(
-                tag: "${truck!.id}",
-                child: Image.asset(truck!.image),
+      child: Card(          
+          color: Colors.black,
+          child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.all(8.0),
+                // For  demo we use fixed height  and width
+                // Now we dont need them
+                // height: 180,
+                // width: 160,
+                decoration: BoxDecoration(
+                  //color: product!.color,
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Hero(
+                  tag: "${truck!.id}",
+                  child: Image.asset(truck!.image),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-            child: Text(
-              // products is out demo list
-              truck!.title,
-              style: const TextStyle(color: kTextLightColor),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
+              child: Text(
+                // products is out demo list
+                truck!.title,
+                style: const TextStyle(color: kTextItemCardTitle),
+              ),
             ),
-          ),
-          Text(
-            "\$${truck!.price}",
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          )
-        ],
-      ),
+            Text(
+              "\$${truck!.price}",
+              style: const TextStyle(fontWeight: FontWeight.bold,
+              color: kTextItemCardPrice),
+            )
+          ],
+        ),
+      ), 
     );
   }
 }

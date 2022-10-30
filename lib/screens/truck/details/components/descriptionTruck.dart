@@ -16,20 +16,21 @@ class DescriptionTruck extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
+        children: <Widget>[ 
+          const SizedBox(height: kDefaultPaddin),         
           Text(
             truck.title,
             style: Theme.of(context)
                 .textTheme
                 .headline4
-                ?.copyWith(color: Colors.black54, fontWeight: FontWeight.bold),
+                ?.copyWith(color: kTitle, fontWeight: FontWeight.bold),            
           ),
-         const SizedBox(height: kDefaultPaddin/3),
+         const SizedBox(height: kDefaultPaddin),
          Text(
             truck.description,
-            style: const TextStyle(height: 1),            
+            style: const TextStyle(height: 1, color: kTitle),            
           ),
-          const SizedBox(height: kDefaultPaddin),      
+          const SizedBox(height: kDefaultPaddin*2),      
         ]
       ),
     );

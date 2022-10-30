@@ -4,7 +4,6 @@ import 'package:shop_of_vehicles/models/Truck.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
 import 'package:shop_of_vehicles/screens/truck/details/components/detailsBodyTruck.dart';
 
-
 class DetailsScreenTruck extends StatelessWidget {
   final Truck truck;
   const DetailsScreenTruck({Key? key, required this.truck}) : super(key: key);
@@ -32,10 +31,6 @@ class DetailsScreenTruck extends StatelessWidget {
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/cart.svg"),
           onPressed: () {},
         ),
         const SizedBox(width: kDefaultPaddin / 2)
