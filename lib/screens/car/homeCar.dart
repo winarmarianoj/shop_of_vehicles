@@ -17,7 +17,7 @@ class HomeCar extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 15, 157, 228),
+      backgroundColor: Color.fromARGB(255, 137, 6, 245),
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/back.svg"),
@@ -52,14 +52,6 @@ class HomeCar extends StatelessWidget{
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/search.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/cart.svg",
             // By default our  icon color is white
             color: kTextColor,
           ),
