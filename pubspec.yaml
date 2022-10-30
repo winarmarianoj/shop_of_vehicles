@@ -70,7 +70,12 @@ flutter:
     - assets/cars/
     - assets/truks/
     - assets/image/
+    - assets/truks/Ford18312006/
+    - assets/truks/IvecoCursor3302015/
     - assets/truks/IvecoStralis380/
+    - assets/truks/MB1620l99/
+    - assets/truks/Renault4402008/
+    - assets/truks/Scania114g3302000/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

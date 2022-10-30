@@ -36,9 +36,9 @@ class CarouselTruck extends StatelessWidget {
                 enlargeStrategy: CenterPageEnlargeStrategy.height,
                 autoPlayInterval: Duration(seconds: 2),
               ),
-              itemCount: truckImages.length,              
+              itemCount: truck.photos.length,              
               itemBuilder:(context, index, realIndex) {
-                return buildImage(truckImages[index]);
+                return buildImage(truck.photos[index]);
               },
             ), 
           ),

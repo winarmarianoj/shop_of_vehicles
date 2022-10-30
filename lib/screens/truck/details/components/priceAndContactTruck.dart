@@ -55,7 +55,7 @@ class PriceAndContactTruck extends StatelessWidget {
                       context: context, 
                       builder: (context) => AlertDialog(
                         title: Text("Contacto del Propietario"),
-                        content: Text("Phone:  ${truck.phone} \nEmail: ${truck.email}"),
+                        content: Text("Name: ${truck.name}  Apellido: ${truck.lastname} \nPhone: ${truck.phone} \nEmail: ${truck.email}"),
                         actions: <Widget>[
                           TextButton(
                             child: Text("OK"),
