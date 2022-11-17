@@ -16,7 +16,7 @@ class ItemCardTruck extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Card(          
-          color: Colors.black,
+          color: itemCardBackgroundTruck,
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

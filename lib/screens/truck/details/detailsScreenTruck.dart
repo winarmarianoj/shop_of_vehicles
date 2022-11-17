@@ -24,7 +24,7 @@ class DetailsScreenTruck extends StatelessWidget {
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Colors.white,
+          color: buttonBackTruck,
         ),
         onPressed: () => Navigator.pop(context),
       ),

@@ -42,7 +42,7 @@ class CarouselTruck extends StatelessWidget {
 
   Widget buildImage (String image) => Container(
     margin: EdgeInsets.symmetric(horizontal: 2),
-    color: Colors.deepOrangeAccent,
+    color: carouselTruckBackground,
     child: Image.asset(
       image,
       fit: BoxFit.cover,

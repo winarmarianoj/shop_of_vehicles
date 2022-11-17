@@ -24,7 +24,7 @@ class DetailsScreenVan extends StatelessWidget {
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: Colors.white,
+          color: buttonBackVan,
         ),
         onPressed: () => Navigator.pop(context),
       ),

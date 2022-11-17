@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/constant/constants.dart';
 
 class AuthBackground extends StatelessWidget {
   final Widget child;
@@ -7,8 +8,7 @@ class AuthBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //  color: Colors.red,
+    return Container(      
       width: double.infinity,
       height: double.infinity,
       child: Stack(
@@ -31,7 +31,7 @@ class _HeaderIcon extends StatelessWidget {
         margin: const EdgeInsets.only(top: 30),
         child: const Icon(
           Icons.person_add,
-          color: Colors.white,
+          color: themePersonAddHeaderIcon,
           size: 100,
         ),
       ),
@@ -64,8 +64,8 @@ class _PurpleBox extends StatelessWidget {
   BoxDecoration _purpleBackground() => BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color.fromRGBO(63, 63, 156, 1),
-            Color.fromRGBO(90, 70, 178, 1)
+            themeAuthBackgroundGradiantOne,
+            themeAuthBackgroundGradiantTwo,
           ],
         ),
       );

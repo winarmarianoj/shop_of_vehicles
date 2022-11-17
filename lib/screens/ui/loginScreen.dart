@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/constant/constants.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/decorations/input_decorations.dart';
@@ -96,15 +97,15 @@ class _LoginForm extends StatelessWidget {
             MaterialButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              disabledColor: Colors.grey,
+              disabledColor: themeLoginDisableButton,
               elevation: 0,
-              color: Colors.deepPurple,
+              color: themeLoginSendButton,
               child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 80,
                    vertical: 15),
                   child: Text(
                     loginForm.isLoading ? 'Ingresando': 'Aceptar' ,                     
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: themeLoginStateProccess),
                   )), 
               onPressed: loginForm.isLoading && loginForm.email.length!=0 && loginForm.password.length!=0
                   ? null

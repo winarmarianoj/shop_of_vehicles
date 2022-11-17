@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
+import 'package:shop_of_vehicles/screens/ui/loginScreen.dart';
 import 'package:shop_of_vehicles/screens/van/components/bodyVans.dart';
 
 class HomeVan extends StatelessWidget{
@@ -18,54 +19,65 @@ class HomeVan extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: Color.fromARGB(255, 2, 128, 96),
+      backgroundColor: appBarBackground,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
+        icon: const Icon(Icons.arrow_back),
+        tooltip: 'Vuelve atrás',
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/truck.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
+          icon: const Icon(Icons.directions_car),
+          tooltip: 'Home Cars',
+          color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeTruck(
-                  context,
-                ),
+                builder: (context) => HomeCar(context),
               ),
             );
-          },
+          }, 
         ),
         IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/coche.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
+          icon: const Icon(Icons.local_shipping),
+          tooltip: 'Home Trucks',
+          color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeCar(
-                  context,
-                ),
+                builder: (context) => HomeTruck(context),
+              ),
+            );
+          }, 
+        ),
+        const SizedBox(width: kDefaultPaddin / 2),
+        IconButton(
+          icon: const Icon(Icons.search),
+          color: colorIconAppBar,
+          onPressed: () {
+            /*Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginScreen(),
+              ),
+            );*/
+          },
+        ),
+        const SizedBox(width: kDefaultPaddin / 2),
+        IconButton(
+          icon: const Icon(Icons.logout),
+          color: colorIconAppBar,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginScreen(),
               ),
             );
           },
-        ),
-        IconButton(
-          icon: SvgPicture.asset(
-            "assets/icons/search.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
-          onPressed: () {},
         ),
         const SizedBox(width: kDefaultPaddin / 2)
       ],

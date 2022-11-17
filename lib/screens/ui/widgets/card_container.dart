@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/constant/constants.dart';
 
 class CardContainer extends StatelessWidget {
   final Widget child;
@@ -28,11 +29,11 @@ class CardContainer extends StatelessWidget {
   }
 
   BoxDecoration _createCardShape() => BoxDecoration(
-          color: Colors.white,
+          color: themeCardContainerBoxDecorationCardShape,
           borderRadius: BorderRadius.circular(25),
           boxShadow: [
             BoxShadow(
-              color: Colors.black12,
+              color: themeCardContainerBoxDecorationBoxShadow,
               blurRadius: 15,
               offset: Offset(
                 0,

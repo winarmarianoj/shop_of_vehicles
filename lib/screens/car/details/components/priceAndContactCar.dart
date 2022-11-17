@@ -25,10 +25,10 @@ class PriceAndContactCar extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   children: [
-                    const TextSpan(text: "Pesos Price\n"),   
+                    const TextSpan(text: "Precio en Pesos\n"),   
                     TextSpan(
                       text: "\$${car.price}",
-                      style: Theme.of(context).textTheme.headline4?.copyWith(
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
                           color: kTextItemCardPrice, fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -37,18 +37,20 @@ class PriceAndContactCar extends StatelessWidget {
               const SizedBox(width: kDefaultPaddin*4),      
               Container(
                 margin: const EdgeInsets.only(right: kDefaultPaddin),
-                height: 80,
-                width: 50,
-                decoration: BoxDecoration(
+                height: 120,
+                width: 120,
+                /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(
                     color: kTextItemCardTitle,
                   ),
-                ),
+                ),*/
                 child: IconButton(
                   icon: SvgPicture.asset(
                     "assets/icons/smartphone.svg",
-                    color: kTextItemCardTitle,
+                    color: smartphoneColor,
+                    height: 70,
+                    width: 70,
                   ),
                   onPressed: () {
                     showDialog(
