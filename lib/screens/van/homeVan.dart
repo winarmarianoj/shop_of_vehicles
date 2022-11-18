@@ -7,7 +7,7 @@ import 'package:shop_of_vehicles/screens/ui/loginScreen.dart';
 import 'package:shop_of_vehicles/screens/van/components/bodyVans.dart';
 
 class HomeVan extends StatelessWidget{
-  const HomeVan(BuildContext context, {Key? key}) : super(key: key);
+  const HomeVan({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class HomeVan extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeCar(context),
+                builder: (context) => HomeCar(),
               ),
             );
           }, 
@@ -48,7 +48,7 @@ class HomeVan extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeTruck(context),
+                builder: (context) => HomeTruck(),
               ),
             );
           }, 

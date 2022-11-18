@@ -36,7 +36,7 @@ const themeInputDecorationLogin = Colors.deepPurple;
 const themeInputDecorationLoginLabel = Colors.grey;
 const themeCardContainerBoxDecorationCardShape = Colors.white;
 const themeCardContainerBoxDecorationBoxShadow = Colors.black12;
-const themeAuthBackgroundGradiantOne = Color.fromRGBO(63, 63, 156, 1);
+const themeAuthBackgroundGradiantOne = Color.fromARGB(255, 79, 156, 63);
 const themeAuthBackgroundGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
 
 

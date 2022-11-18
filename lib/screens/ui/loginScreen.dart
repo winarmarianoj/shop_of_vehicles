@@ -6,6 +6,7 @@ import 'package:shop_of_vehicles/screens/ui/decorations/input_decorations.dart';
 import 'package:shop_of_vehicles/screens/ui/widgets/auth_background.dart';
 import 'package:shop_of_vehicles/screens/ui/widgets/card_container.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -111,32 +112,16 @@ class _LoginForm extends StatelessWidget {
                   ? null
                   : () {
                       FocusScope.of(context).unfocus();
-
                       if (!loginForm.isValidForm()) return;
-
-                      loginForm.isLoading = true;
-
+                      //loginForm.isLoading = true;
                       Future.delayed(Duration(seconds: 5));
-
-                      // TODO: validar si el login es correcto
-
-                      //loginForm.isLoading = false;
-                      //Navigator.pushReplacementNamed(context, const Home());                                            
-                      /*Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const Home(),
-                        ),
-                      );*/
-                      //Navigator.of(context).push(Home.route());
-                      // ignore: use_build_context_synchronously
-                      //Navigator.push(context, MaterialPageRoute(builder: (_) => const Home()));
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck(context))));
-
-                    }
+                      // TODO: validar si el login es correcto                     
+                      Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage(loginForm: loginForm,))));                      
+                    }                    
             ),
           ],
         ),
       ),
-    );
+    );    
   }
 }

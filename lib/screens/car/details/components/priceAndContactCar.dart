@@ -37,8 +37,8 @@ class PriceAndContactCar extends StatelessWidget {
               const SizedBox(width: kDefaultPaddin*4),      
               Container(
                 margin: const EdgeInsets.only(right: kDefaultPaddin),
-                height: 120,
-                width: 120,
+                height: 80,
+                width: 80,
                 /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(

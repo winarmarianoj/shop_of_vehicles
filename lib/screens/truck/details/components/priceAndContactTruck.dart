@@ -38,7 +38,7 @@ class PriceAndContactTruck extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(right: kDefaultPaddin),
                 height: 120,
-                width: 120,
+                width: 70,
                 /*decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   border: Border.all(
