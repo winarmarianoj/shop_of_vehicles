@@ -13,7 +13,7 @@ class BodyVans extends StatelessWidget{
       children: [
         Image.asset(
           "assets/image/cielo.jpg",
-          width: 500,
+          width: 600,
           height: 700,
           fit: BoxFit.cover,
         ),

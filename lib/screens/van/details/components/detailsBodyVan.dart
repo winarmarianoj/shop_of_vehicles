@@ -21,8 +21,8 @@ class DetailsBodyVan extends StatelessWidget {
             child: Stack(              
               children: <Widget>[
                 Image.asset(
-                  "assets/image/cielo.jpg",
-                  width: 500,
+                  "assets/image/fondoTrucks.jpg",
+                  width: 600,
                   height: 800,
                   fit: BoxFit.cover,
                 ),

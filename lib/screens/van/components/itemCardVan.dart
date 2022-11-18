@@ -16,7 +16,7 @@ class ItemCardVan extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Card(          
-          color: Color.fromARGB(255, 56, 4, 4),
+          color: itemCardBackgroundVan,
           child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

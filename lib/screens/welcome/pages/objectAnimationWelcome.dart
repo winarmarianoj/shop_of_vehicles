@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'dart:math';
 
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateCar.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateTruck.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateTruckRepar.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateVan.dart';
 
-class ObectAnimationWelcome extends StatefulWidget {  
+class ObectAnimationWelcome extends StatefulWidget { 
+  final LoginFormProvider loginForm; 
+  const ObectAnimationWelcome({Key? key, required this.loginForm}) : super(key: key); 
   @override
-  State<ObectAnimationWelcome> createState() => _VehiclesAnimadoPageState();
+  State<ObectAnimationWelcome> createState() => _VehiclesAnimadoPageState(loginForm);
 }
 
 class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with SingleTickerProviderStateMixin {
+  final LoginFormProvider loginForm; 
+    _VehiclesAnimadoPageState(this.loginForm);
+  
   
   late AnimationController controller;
   // animaciones  
@@ -108,22 +119,22 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
       child: Stack(
         children: <Widget>[
           new Positioned(
-            child: _AnimateCar(),
+            child: AnimateCar(),
             left: animationCar.value,
             top: 30.0,
           ),
           new Positioned(
-            child: _AnimateVan(),
+            child: AnimateVan(),
             left: animationVan.value,
             top: 320.0,
           ),
           new Positioned(
-            child: _AnimateTruck(),
+            child: AnimateTruck(),
             left: animationTruck.value,
             top: 100.0,
           ),
           new Positioned(
-            child: _AnimateTruckRepar(),
+            child: AnimateTruckRepar(),
             right: animationTruck.value,
             top: 190.0,
           ),
@@ -143,15 +154,14 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
                   child: Transform.translate(
                     // La traslación dx utiliza el outAnimation para la salida mienstra dy utiliza inAnimation para la entrada
                     offset: Offset(outAnimation.value * width, inAnimation.value * height),
-                    child: Container(width: 150.0, height: 40.0, color: Color.fromARGB(29, 3, 88, 236), 
+                    child: Container(width: 220.0, height: 100.0, color: themeWelcomeTextBackground, 
                       child: RichText(
                           text: TextSpan(
-                            children: [
-                              //const TextSpan(text: "Precio en Dolares\n"),   
+                            children: [                              
                               TextSpan(
-                                text: "Bienvenidos!!",
+                                text: "Bienvenido \n" + loginForm.email + "!!!",
                                 style: Theme.of(context).textTheme.headline6?.copyWith(
-                                    color: Colors.green, fontWeight: FontWeight.bold),
+                                    color: themeWelcomeText, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
@@ -163,49 +173,8 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
             ),
           ),                
         ],
-        //textDirection: TextDirection.ltr,
-        //Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck())));
+        //textDirection: TextDirection.ltr,        
       ),      
     );    
   }    
-}
-
-class _AnimateTruck extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset("assets/image/camionazo.png"),
-//      width: 200,
-//      height: 200,
-     );
-   }
-}
-
-class _AnimateTruckRepar extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset("assets/image/camion-reparto.png"),
-      width: 200,
-      height: 150,
-     );
-   }
-}
-
-class _AnimateCar extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset("assets/image/auto.png"),
-     );
-   }
-}
-
-class _AnimateVan extends StatelessWidget {
-    @override
-    Widget build(BuildContext context) {
-    return Container(
-      child: Image.asset("assets/image/camioneta.png"),
-     );
-   }
 }

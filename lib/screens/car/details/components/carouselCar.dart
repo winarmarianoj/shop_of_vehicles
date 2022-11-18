@@ -21,7 +21,7 @@ class CarouselCar extends StatelessWidget {
           Container(            
             child: CarouselSlider.builder(               
               options: CarouselOptions(
-                height: 300,
+                height: 250,
                 autoPlay: true,
                 enlargeCenterPage: true,
                 //reverse: true,

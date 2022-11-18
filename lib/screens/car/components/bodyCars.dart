@@ -13,7 +13,7 @@ class BodyCars extends StatelessWidget{
       children: [
         Image.asset(
           "assets/image/fondo2.jpg",
-          width: 500,
+          width: 600,
           height: 700,
           fit: BoxFit.cover,
         ),

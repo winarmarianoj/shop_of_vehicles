@@ -29,13 +29,6 @@ class DetailsScreenCar extends StatelessWidget {
         ),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: <Widget>[
-        IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
-        ),
-        const SizedBox(width: kDefaultPaddin / 2)
-      ],
     );
   }
 }

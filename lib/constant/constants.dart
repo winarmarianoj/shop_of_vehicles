@@ -9,12 +9,12 @@ const kTitle = Color(0xFFFA8A04);
 
 const colorIconAppBar = Colors.white;
 const appBarBackground = Color.fromARGB(255, 15, 157, 228);
-const cardBackground = Color.fromARGB(255, 4, 2, 100);
 const smartphoneColor = Color.fromARGB(255, 232, 248, 1);
 
 const kDefaultPaddin = 20.0;
 
 //TODO CAR
+const itemCardBackgroundCar = Colors.black;
 const buttonBackCar = Colors.white;
 const carouselCarBackground = Colors.deepOrangeAccent;
 
@@ -24,6 +24,7 @@ const buttonBackTruck = Colors.white;
 const carouselTruckBackground = Colors.deepOrangeAccent;
 
 //TODO VAN
+const itemCardBackgroundVan = Colors.black;
 const buttonBackVan = Colors.white;
 
 //TODO LOGIN
@@ -38,6 +39,11 @@ const themeCardContainerBoxDecorationCardShape = Colors.white;
 const themeCardContainerBoxDecorationBoxShadow = Colors.black12;
 const themeAuthBackgroundGradiantOne = Color.fromARGB(255, 79, 156, 63);
 const themeAuthBackgroundGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
+
+//TODO ANIMATIONS
+const themeWelcomeTextBackground = Color.fromARGB(29, 3, 88, 236);
+const themeWelcomeText = Colors.green;
+
 
 
 

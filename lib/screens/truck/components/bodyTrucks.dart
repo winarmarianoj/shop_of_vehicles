@@ -13,7 +13,7 @@ class BodyTrucks extends StatelessWidget{
       children: [
         Image.asset(
           "assets/image/fondo1.jpg",
-          width: 500,
+          width: 600,
           height: 700,
           fit: BoxFit.cover,
         ),
