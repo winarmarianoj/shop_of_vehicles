@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
+import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
-import 'package:shop_of_vehicles/screens/ui/decorations/input_decorations.dart';
-import 'package:shop_of_vehicles/screens/ui/widgets/auth_background.dart';
-import 'package:shop_of_vehicles/screens/ui/widgets/card_container.dart';
+import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
+import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
+import 'package:shop_of_vehicles/screens/ui/login/widgets/card_container.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_of_vehicles/screens/ui/register/registerScreen.dart';
 import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -35,13 +37,29 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 50),
               const Text(
-                'Crear una nueva cuenta',
+                'Crea una nueva cuenta',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 10),
+              MaterialButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+                  disabledColor: themeLoginDisableButton,
+                  elevation: 0,
+                  color: themeLoginSendButton,
+                  child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 80,
+                      vertical: 15),
+                      child: Text('Registrarse' ,                     
+                        style: const TextStyle(color: themeLoginStateProccess),
+                      )),                   
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: ((context) => RegisterScreen())));
+              }),
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -121,7 +139,7 @@ class _LoginForm extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ),      
     );    
   }
 }

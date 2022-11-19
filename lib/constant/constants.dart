@@ -32,6 +32,7 @@ const themePersonAdd = Colors.black;
 const themePersonAddHeaderIcon = Colors.white;
 const themeLoginDisableButton = Colors.grey;
 const themeLoginSendButton = Colors.deepPurple;
+const themeSendRegisterButton = Colors.deepOrange;
 const themeLoginStateProccess = Colors.white;
 const themeInputDecorationLogin = Colors.deepPurple;
 const themeInputDecorationLoginLabel = Colors.grey;

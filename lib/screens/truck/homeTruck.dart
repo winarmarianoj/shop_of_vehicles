@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/truck/components/bodyTrucks.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
-import 'package:shop_of_vehicles/screens/ui/loginScreen.dart';
+import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
+import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
 import 'package:shop_of_vehicles/screens/van/homeVan.dart';
 
 class HomeTruck extends StatelessWidget{
-  const HomeTruck({Key? key}) : super(key: key);
+  final LoginFormProvider loginForm; 
+  const HomeTruck({Key? key, required this.loginForm})  : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      drawer: HomeDrawer(loginForm: loginForm,),
       body: const BodyTrucks(),
     );
   }
@@ -21,11 +25,11 @@ class HomeTruck extends StatelessWidget{
     return AppBar(
       backgroundColor: appBarBackground,
       elevation: 0,
-      leading: IconButton(
+      /*leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         tooltip: 'Vuelve atrás',
         onPressed: () {},
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.airport_shuttle),
@@ -35,7 +39,7 @@ class HomeTruck extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeVan(),
+                builder: (context) => HomeVan(loginForm: loginForm,),
               ),
             );
           },         
@@ -48,7 +52,7 @@ class HomeTruck extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeCar(),
+                builder: (context) => HomeCar(loginForm: loginForm,),
               ),
             );
           }, 

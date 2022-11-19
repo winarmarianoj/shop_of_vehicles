@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
-import 'package:shop_of_vehicles/screens/ui/loginScreen.dart';
+import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
+import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
 import 'package:shop_of_vehicles/screens/van/components/bodyVans.dart';
 
 class HomeVan extends StatelessWidget{
-  const HomeVan({Key? key}) : super(key: key);
+  final LoginFormProvider loginForm;
+  const HomeVan({Key? key, required this.loginForm}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      drawer: HomeDrawer(loginForm: loginForm,),
       body: const BodyVans(),
     );
   }
@@ -21,11 +25,11 @@ class HomeVan extends StatelessWidget{
     return AppBar(
       backgroundColor: appBarBackground,
       elevation: 0,
-      leading: IconButton(
+      /*leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         tooltip: 'Vuelve atrás',
         onPressed: () {},
-      ),
+      ),*/
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.directions_car),
@@ -35,7 +39,7 @@ class HomeVan extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeCar(),
+                builder: (context) => HomeCar(loginForm: loginForm,),
               ),
             );
           }, 
@@ -48,7 +52,7 @@ class HomeVan extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeTruck(),
+                builder: (context) => HomeTruck(loginForm: loginForm,),
               ),
             );
           }, 

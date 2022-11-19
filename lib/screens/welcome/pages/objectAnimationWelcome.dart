@@ -89,7 +89,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
     animationTruck.addListener(() {
         setState(() {});
          if(controller.status == AnimationStatus.completed){           
-           Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck())));
+           Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck(loginForm: loginForm,))));
          }
             
     });
