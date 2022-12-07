@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
 import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
@@ -162,7 +162,7 @@ class RegisterForm extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               disabledColor: themeLoginDisableButton,
               elevation: 0,
-              color: themeLoginSendButton,
+              color: themeRegisterButton,
               child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 80,
                    vertical: 15),

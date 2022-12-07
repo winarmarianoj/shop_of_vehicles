@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/models/Van.dart';
 import 'package:shop_of_vehicles/screens/van/details/components/detailsBodyVan.dart';
 

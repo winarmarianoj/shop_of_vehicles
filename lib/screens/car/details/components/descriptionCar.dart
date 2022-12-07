@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/models/Car.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 
 class DescriptionCar extends StatelessWidget {
   const DescriptionCar({

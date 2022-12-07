@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
-import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
-import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
 import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
 import 'package:shop_of_vehicles/screens/ui/login/widgets/card_container.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/screens/ui/register/registerScreen.dart';
 import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
+import 'package:shop_of_vehicles/service/authenticationService.dart';
+
+import '../../../utils/bounceButton.dart';
+import '../../../utils/customPopup.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -49,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
                   disabledColor: themeLoginDisableButton,
                   elevation: 0,
-                  color: themeLoginSendButton,
+                  color: themeRegisterButton,
                   child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 80,
                       vertical: 15),
@@ -71,7 +74,8 @@ class LoginScreen extends StatelessWidget {
 class _LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     final loginForm = Provider.of<LoginFormProvider>(context);
+    var loginForm = Provider.of<LoginFormProvider>(context);
+    final usuarioCubit = context.read<UserCubit>();
     return Container(
       child: Form(
         key: loginForm.formKey,
@@ -130,12 +134,36 @@ class _LoginForm extends StatelessWidget {
                   ? null
                   : () {
                       FocusScope.of(context).unfocus();
-                      if (!loginForm.isValidForm()) return;
+                      if (!loginForm.isValidForm()) return;                      
                       //loginForm.isLoading = true;
                       Future.delayed(Duration(seconds: 5));
-                      // TODO: validar si el login es correcto                     
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage(loginForm: loginForm,))));                      
-                    }                    
+                      // TODO: validar si el login es correcto 
+                      AuthenticationService service = AuthenticationService();
+                      loginForm = service.getLoginUser(loginForm, context);
+                      if(loginForm.isLoading) {
+                        Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage(loginForm: loginForm,))));
+                      }else{
+                        showDialog(context: context, 
+                          builder: (_) => CustomPopup(
+                              title: 'Resultado del Login',
+                              message: 'Error en el proceso de login. Incorrecto password o su usuario no existe.',
+                              buttonAccept: BounceButton(
+                                buttonSize: ButtonSize.small,
+                                type: ButtonType.primary,
+                                label: 'OK',
+                                onPressed: () {
+                                  /*context.read<CreditCardListBloc>().add(
+                                        CreditCardListEvent.toggleLock(
+                                          card: card,
+                                        ),
+                                      );*/
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                        );                     
+                      }
+                  }                     
             ),
           ],
         ),

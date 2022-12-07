@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/screens/truck/details/components/carouselTruck.dart';
 import 'package:shop_of_vehicles/screens/truck/details/components/priceAndContactTruck.dart';
 import 'descriptionTruck.dart';

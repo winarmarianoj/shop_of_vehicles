@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'dart:math';
 
@@ -18,7 +20,8 @@ class ObectAnimationWelcome extends StatefulWidget {
 
 class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with SingleTickerProviderStateMixin {
   final LoginFormProvider loginForm; 
-    _VehiclesAnimadoPageState(this.loginForm);
+  
+  _VehiclesAnimadoPageState(this.loginForm);
   
   
   late AnimationController controller;
@@ -111,9 +114,9 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
 
   @override
   Widget build(BuildContext context) {
+    final usuarioCubit = context.read<UserCubit>();
     final height = MediaQuery.of(context).size.height * 0.5;
     final width = (MediaQuery.of(context).size.width * 0.5);
-
     controller.forward();
     return Container(
       child: Stack(

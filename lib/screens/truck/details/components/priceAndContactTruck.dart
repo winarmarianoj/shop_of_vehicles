@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_of_vehicles/cubit/userCubit.dart';
+import 'package:shop_of_vehicles/models/Contact.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PriceAndContactTruck extends StatelessWidget {
   PriceAndContactTruck({
@@ -53,6 +56,8 @@ class PriceAndContactTruck extends StatelessWidget {
                     width: 70,
                   ),
                   onPressed: () {
+                    Contact contact = Contact(name: truck.name, lastname: truck.lastname, phone: truck.phone, email: truck.email);
+                    context.read<UserCubit>().addContact(contact);
                     showDialog(
                       context: context, 
                       builder: (context) => AlertDialog(

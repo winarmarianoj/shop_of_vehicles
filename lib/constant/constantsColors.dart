@@ -32,6 +32,7 @@ const themePersonAdd = Colors.black;
 const themePersonAddHeaderIcon = Colors.white;
 const themeLoginDisableButton = Colors.grey;
 const themeLoginSendButton = Colors.deepPurple;
+const themeRegisterButton = Colors.deepPurpleAccent;
 const themeSendRegisterButton = Colors.deepOrange;
 const themeLoginStateProccess = Colors.white;
 const themeInputDecorationLogin = Colors.deepPurple;
@@ -45,6 +46,21 @@ const themeAuthBackgroundGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
 const themeWelcomeTextBackground = Color.fromARGB(29, 3, 88, 236);
 const themeWelcomeText = Colors.green;
 
+//TODO BUTTONS
+const primaryColor = Colors.blueGrey;
+const primaryColorDark = Colors.black;
+const neutral1Color = Colors.amber;
+const neutral3Color = Colors.amberAccent;
 
+//TODO DRAWER
+const themeDrawerGradiantOne = Color.fromARGB(255, 79, 156, 63);
+const themeDrawerGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
+const themeDrawerBackground = Colors.black;
+const themeDrawerText = Colors.green;
 
+//TODO PROFILES
+const textLabelChangeProfile = Colors.white;
+const buttonChangeProfile = Colors.blueGrey;
+const textButtonInputText = Colors.white;
+const buttonInputText = Colors.green;
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/truck/components/bodyTrucks.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
@@ -16,7 +15,7 @@ class HomeTruck extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      drawer: HomeDrawer(loginForm: loginForm,),
+      drawer: HomeDrawer(),
       body: const BodyTrucks(),
     );
   }
@@ -70,7 +69,7 @@ class HomeTruck extends StatelessWidget{
             );*/
           },
         ),
-        const SizedBox(width: kDefaultPaddin / 2),
+        /* const SizedBox(width: kDefaultPaddin / 2),
         IconButton(
           icon: const Icon(Icons.logout),
           color: colorIconAppBar,
@@ -83,60 +82,9 @@ class HomeTruck extends StatelessWidget{
             );
           },
         ),
-        const SizedBox(width: kDefaultPaddin / 2)
+        const SizedBox(width: kDefaultPaddin / 2) */
       ],
     );
   }
 
 }
-
-/*
-//SvgPicture.asset("assets/icons/back.svg"),
-
-SvgPicture.asset(
-            "assets/icons/search.svg",
-            // By default our  icon color is white
-            color: kTextItemCardTitle,
-          ),
-
-SvgPicture.asset(
-            "assets/icons/coche.svg",
-            // By default our  icon color is white
-            color: kTextItemCardTitle,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeCar(
-                  context,
-                ),
-              ),
-            );
-          },
-
-icon: SvgPicture.asset(
-            "assets/icons/search.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
-          onPressed: () {},
-
- icon: SvgPicture.asset(
-            "assets/icons/camioneta.svg",
-            // By default our  icon color is white
-            color: kTextColor,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeVan(
-                  context,
-                ),
-              ),
-            );
-          },
-
-
-*/

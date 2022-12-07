@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/screens/truck/details/components/detailsBodyTruck.dart';
 
 class DetailsScreenTruck extends StatelessWidget {
@@ -10,8 +10,6 @@ class DetailsScreenTruck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // each product have a color
-      //backgroundColor: product.color,
       appBar: buildAppBar(context),
       body: DetailsBodyTruck(truck: truck),
     );

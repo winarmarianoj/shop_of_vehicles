@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/models/Car.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/screens/car/details/components/carouselCar.dart';
 import 'package:shop_of_vehicles/screens/car/details/components/priceAndContactCar.dart';
 import 'package:shop_of_vehicles/screens/car/details/components/descriptionCar.dart';

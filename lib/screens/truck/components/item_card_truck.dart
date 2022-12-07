@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
-import 'package:shop_of_vehicles/constant/constants.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 
 class ItemCardTruck extends StatelessWidget {
   final Truck? truck;
@@ -23,12 +23,7 @@ class ItemCardTruck extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(8.0),
-                // For  demo we use fixed height  and width
-                // Now we dont need them
-                // height: 180,
-                // width: 160,
                 decoration: BoxDecoration(
-                  //color: product!.color,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Hero(
@@ -40,7 +35,6 @@ class ItemCardTruck extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
               child: Text(
-                // products is out demo list
                 truck!.title,
                 style: const TextStyle(color: kTextItemCardTitle),
               ),
