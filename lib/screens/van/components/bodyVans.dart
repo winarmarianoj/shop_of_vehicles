@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/models/Van.dart';
-import 'package:shop_of_vehicles/screens/van/components/itemCardVan.dart';
-import 'package:shop_of_vehicles/screens/van/details/detailsScreenVan.dart';
+import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
+import 'package:shop_of_vehicles/screens/components/itemCard.dart';
 
 class BodyVans extends StatelessWidget{
   const BodyVans({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class BodyVans extends StatelessWidget{
     return Stack(
       children: [
         Image.asset(
-          "assets/image/cielo.jpg",
+          "assets/image/texture.jpg",
           width: 600,
           height: 700,
           fit: BoxFit.cover,
@@ -27,17 +27,21 @@ class BodyVans extends StatelessWidget{
                   itemCount: vans.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: kDefaultPaddin/3,
-                    crossAxisSpacing: kDefaultPaddin/3,
+                    mainAxisSpacing: defaultPaddingHome,
+                    crossAxisSpacing: defaultPaddingHome,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (context, index) => ItemCardVan(
-                    van: vans[index],
+                  itemBuilder: (context, index) => ItemCard(
+                    id: vans[index].id,
+                    marca: vans[index].marca,
+                    modelo: vans[index].modelo,
                     press: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailsScreenVan(
-                          van: vans[index],
+                        builder: (context) => DetailsScreen(
+                          id: vans[index].id,
+                          marca: vans[index].marca,
+                          modelo: vans[index].modelo,
                         ),
                       ),
                     ),

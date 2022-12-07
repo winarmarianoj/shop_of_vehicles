@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Van {
-  final String name, lastname, image, title, description, phone, email;
+  final String marca, modelo, anio, image, description, phone, email;
   final int price, size, id;
   final Color color;
   List<String> photos;
   Van({
     required this.id,
-    required this.name,
-    required this.lastname,
+    required this.marca,
+    required this.modelo,
     required this.image,
-    required this.title,
+    required this.anio,
     required this.price,
     required this.description,
     required this.size,
@@ -24,9 +24,9 @@ class Van {
 List<Van> vans = [
   Van(
       id: 1,
-      name: "Kia",
-      lastname: "Sorento 2008",
-      title: "Kia Sorento 4X4 2008",
+      marca: "Kia",
+      modelo: "Sorento",
+      anio: "2008",
       price: 2800000,
       size: 12,
       description: "Kia Sorento 2.5 Crdi Ex Mt 4X4 2008 170000kms",
@@ -43,9 +43,9 @@ List<Van> vans = [
             ]),
   Van(
       id: 2,
-      name: "Toyota",
-      lastname: "SW4 2021",
-      title: "Toyota SW4 2021",
+      marca: "Toyota",
+      modelo: "SW4",
+      anio: "2021",
       price: 15000000,
       size: 8,
       description: "Toyota SW4 2.8srx 204cv 4x4 7as 2021 50000kms",
@@ -62,9 +62,9 @@ List<Van> vans = [
             ]),
   Van(
       id: 3,
-      name: "Audi",
-      lastname: "Q5 2013",
-      title: "Audi Q5 2013",
+      marca: "Audi",
+      modelo: "Q5",
+      anio: "2013",
       price: 8850000,
       size: 10,
       description: "Audi Q5 TDI QUATTRO 2013 140000kms",
@@ -81,9 +81,9 @@ List<Van> vans = [
             ]),
   Van(
       id: 4,
-      name: "Suzuki",
-      lastname: "Vitara 2008",
-      title: "Suzuki Grand Vitara Jx 2008",
+      marca: "Suzuki",
+      modelo: "Vitara Vitara",
+      anio: "2008",
       price: 6000000,
       size: 11,
       description: "Suzuki Grand Vitara Jx 2008 60000 kms",
@@ -100,9 +100,9 @@ List<Van> vans = [
             ]),
   Van(
       id: 5,
-      name: "Mercedes",
-      lastname: "Clase 2017",
-      title: "Mercedes Clase G G500",
+      marca: "Mercedes",
+      modelo: "Clase G",
+      anio: "2017",
       price: 69000000,
       size: 12,
       description: "Mercedes Clase G G500 2017 39000kms",
@@ -119,9 +119,9 @@ List<Van> vans = [
             ]),
   Van(
       id: 6,
-      name: "Ford",
-      lastname: "Bronco 2022",
-      title: "Ford Bronco 2022",
+      marca: "Ford",
+      modelo: "Bronco",
+      anio: "2022",
       price: 9632560,
       size: 12,
       description: "Ford Bronco Sport Big Bend 1.5 0kkm 2022 500kms",

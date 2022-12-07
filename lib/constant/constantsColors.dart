@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const kTextColor = Color(0xFF535353);
 const kTextLightColor = Color(0xFFACACAC);
-const kTextItemCardTitle = Color(0xFFAFF907);
+const kTextItemCardTitle = Color.fromARGB(255, 13, 165, 7);
 const kTextItemCardPrice = Color(0xFFF9DC07);
 const kFondo = Color.fromARGB(255, 10, 29, 104);
 const kTitle = Color(0xFFFA8A04);
@@ -12,6 +12,9 @@ const appBarBackground = Color.fromARGB(255, 15, 157, 228);
 const smartphoneColor = Color.fromARGB(255, 232, 248, 1);
 
 const kDefaultPaddin = 20.0;
+const defaultPaddingTextObjectsHome = 4.0;
+const defaultPaddingImageObjectsHome = 2.0;
+const defaultPaddingHome = 0.9;
 
 //TODO CAR
 const itemCardBackgroundCar = Colors.black;
@@ -26,6 +29,8 @@ const carouselTruckBackground = Colors.deepOrangeAccent;
 //TODO VAN
 const itemCardBackgroundVan = Colors.black;
 const buttonBackVan = Colors.white;
+
+const themeTextCardHome = Colors.green;
 
 //TODO LOGIN
 const themePersonAdd = Colors.black;

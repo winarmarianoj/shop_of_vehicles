@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Truck {
-  final String name, lastname, image, title, description, phone, email;
+  final String marca, modelo, anio, image, description, phone, email;
   final int price, size, id;
   final Color color;
   List<String> photos;
   Truck({
     required this.id,
-    required this.name,
-    required this.lastname,
+    required this.marca,
     required this.image,
-    required this.title,
+    required this.anio,
+    required this.modelo,
     required this.price,
     required this.description,
     required this.size,
@@ -32,9 +32,9 @@ final truckImages = [
 List<Truck> trucks = [
   Truck(
       id: 1,
-      name: "Mercedes",
-      lastname: "Benz",
-      title: "MB 1620L 1999",
+      marca: "Mercedes Benz",
+      modelo: "1620L",
+      anio: "1999",
       price: 15000,
       size: 5,
       description: "Mercedes Benz 1620L 1999 con Volquete Baco Gomas 295 Excelente Recibo Camioneta",
@@ -51,9 +51,9 @@ List<Truck> trucks = [
             ]),
   Truck(
       id: 2,
-      name: "Iveco",
-      lastname: "Stralis",
-      title: "Iveco Stralis 380Hd",
+      marca: "Iveco",
+      modelo: "Stralis 380Hd",
+      anio: "2000",
       price: 10000,
       size: 5,
       description: "Iveco Stralis 380Hd Excelente Estado Servicio Completo Ruta 7 y Carril Ponce Camiones Mendoza",
@@ -70,13 +70,13 @@ List<Truck> trucks = [
             ]),
   Truck(
       id: 3,
-      name: "Renault",
-      lastname: "440",
-      title: "Renault 440 2008",
+      marca: "Renault",
+      modelo: "440",
+      anio: "2008",
       price: 14000,
       size: 5,
       description: "Renault 440 2008 Motor Volvo Listo para transferir Podría permutar ",
-      image: "assets/truks/Renault4402008/1.jpg",
+      image: "assets/truks/Renault4402008/3.jpg",
       color: const Color(0xFF3D82AE),
       phone: "1133334444",
       email: "renault440@gmail.com",
@@ -87,9 +87,9 @@ List<Truck> trucks = [
             ]),
   Truck(
       id: 4,
-      name: "Iveco",
-      lastname: "Cursor",
-      title: "Iveco Cursor 330 2015",
+      marca: "Iveco",
+      modelo: "Cursor 330",
+      anio: "2015",
       price: 7500,
       size: 5,
       description: "Tractor Original Primera Mano Llantas De Aluminio Alcoa Tanque De Combustible De 600Lts. De Aluminio Vigía De Motor Aire Acondicionado Climatizador Espectacular!!",
@@ -106,9 +106,9 @@ List<Truck> trucks = [
             ]),
   Truck(
       id: 5,
-      name: "Scania",
-      lastname: "114G 330",
-      title: "Scania 114G 330 2000",
+      marca: "Scania",
+      modelo: "114G 330",
+      anio: "2000",
       price: 11000,
       size: 5,
       description: "Scania 114G 330 año 2000 impecable Motor a Acentar",
@@ -125,9 +125,9 @@ List<Truck> trucks = [
             ]),
   Truck(
       id: 6,
-      name: "Ford",
-      lastname: "1831 2006",
-      title: "Ford 1831 2006",
+      marca: "Ford",
+      modelo: "1831",
+      anio: "2006",
       price: 9000,
       size: 5,
       description: "Ford 1831 2006 Chasis intermedio",

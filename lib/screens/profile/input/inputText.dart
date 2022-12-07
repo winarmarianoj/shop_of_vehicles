@@ -13,43 +13,46 @@ class InputText extends StatelessWidget {
     final usuarioCubit = context.read<UserCubit>();
 
     return Scaffold(
-      body: Column(
-            children: [
-              SizedBox(height: 250),
-              Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    Text(
-                      'Escriba su nuevo ' + attribute + " :",
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                    Form(                      
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      child: Column(
-                        children: [
-                          TextField(
-                            keyboardType: TextInputType.text,
-                            onChanged: (value) {
-                              changeNewAttribute(attribute, value, context);
-                            }
-                          ),                          
-                          const SizedBox(height: 30),
-                          MaterialButton(
-                              child: Text(
-                                'Send Data',
-                                style: TextStyle(color: textButtonInputText),
-                              ),
-                              color: buttonInputText,
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: ((context) => ProfileUser())));
-                              }),   
-                        ],
-                      ),
-                    ),
-                  ],
-              ),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 250),
+            Column(
+              children: [
+                const SizedBox(height: 10),
+                Text(
+                  'Escriba su nuevo ' + attribute + " :",
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+                Form(                      
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  child: Column(
+                    children: [
+                      TextField(
+                        keyboardType: TextInputType.text,
+                        onChanged: (value) {
+                          changeNewAttribute(attribute, value, context);
+                        }
+                      ),                          
+                      const SizedBox(height: 30),
+                      MaterialButton(
+                          child: Text(
+                            'Send Data',
+                            style: TextStyle(color: textButtonInputText),
+                          ),
+                          color: buttonInputText,
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: ((context) => ProfileUser())));
+                          }),   
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );  
   }
   

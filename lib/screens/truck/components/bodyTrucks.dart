@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
-import 'package:shop_of_vehicles/screens/truck/components/item_card_truck.dart';
-import 'package:shop_of_vehicles/screens/truck/details/detailsScreenTruck.dart';
+import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
+import 'package:shop_of_vehicles/screens/components/itemCard.dart';
 
 class BodyTrucks extends StatelessWidget{
   const BodyTrucks({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class BodyTrucks extends StatelessWidget{
     return Stack(
       children: [
         Image.asset(
-          "assets/image/fondo1.jpg",
+          "assets/image/texture.jpg",
           width: 600,
           height: 700,
           fit: BoxFit.cover,
@@ -27,17 +27,21 @@ class BodyTrucks extends StatelessWidget{
                   itemCount: trucks.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: kDefaultPaddin/3,
-                    crossAxisSpacing: kDefaultPaddin/3,
+                    mainAxisSpacing: defaultPaddingHome,
+                    crossAxisSpacing: defaultPaddingHome,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (context, index) => ItemCardTruck(
-                    truck: trucks[index],
+                  itemBuilder: (context, index) => ItemCard(
+                    id: trucks[index].id,
+                    marca: trucks[index].marca,
+                    modelo: trucks[index].modelo,
                     press: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailsScreenTruck(
-                          truck: trucks[index],
+                          builder: (context) => DetailsScreen(
+                          id: trucks[index].id,
+                          marca: trucks[index].marca,
+                          modelo: trucks[index].modelo,
                         ),
                       ),
                     ),

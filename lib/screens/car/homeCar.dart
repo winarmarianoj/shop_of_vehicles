@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
-import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/car/components/bodyCars.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
-import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
 import 'package:shop_of_vehicles/screens/van/homeVan.dart';
 
 class HomeCar extends StatelessWidget{
-  final LoginFormProvider loginForm;
-  const HomeCar({Key? key, required this.loginForm}) : super(key: key);
+  const HomeCar({Key? key, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +35,7 @@ class HomeCar extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeVan(loginForm: loginForm,),
+                builder: (context) => HomeVan(),
               ),
             );
           },         
@@ -51,7 +48,7 @@ class HomeCar extends StatelessWidget{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HomeTruck(loginForm: loginForm,),
+                builder: (context) => HomeTruck(),
               ),
             );
           }, 
@@ -69,20 +66,6 @@ class HomeCar extends StatelessWidget{
             );*/
           },
         ),
-        const SizedBox(width: kDefaultPaddin / 2),
-        IconButton(
-          icon: const Icon(Icons.logout),
-          color: colorIconAppBar,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginScreen(),
-              ),
-            );
-          },
-        ),
-        const SizedBox(width: kDefaultPaddin / 2)
       ],
     );
   }

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Car {
-  final String name, lastname, image, title, description, phone, email;
+  final String marca, modelo, anio, image, description, phone, email;
   final int price, size, id;
   final Color color;
   List<String> photos;
   Car({
     required this.id,
-    required this.name,
-    required this.lastname,
+    required this.marca,
+    required this.modelo,
     required this.image,
-    required this.title,
+    required this.anio,
     required this.price,
     required this.description,
     required this.size,
@@ -24,9 +24,9 @@ class Car {
 List<Car> cars = [
   Car(
       id: 1,
-      name: "Volkswagen",
-      lastname: "Tiguan Allspace",
-      title: "VW Tiguan Allspace 2021",
+      marca: "Volkswagen",
+      modelo: "Tiguan Allspace",
+      anio: "2021",
       price: 10900000,
       size: 12,
       description: "Volkswagen Tiguan Allspace 1.4 Tsi Trendline 150cv Dsg modelo 2021 48711 km",
@@ -43,9 +43,9 @@ List<Car> cars = [
             ]),
   Car(
       id: 2,
-      name: "Toyota",
-      lastname: "Corolla 2021",
-      title: "Toyota Corolla 2021",
+      marca: "Toyota",
+      modelo: "Corolla",
+      anio: "2021",
       price: 7250000,
       size: 8,
       description: "Toyota Corolla 1.8 Xei Cvt Pack 140cv 2021 29120kms",
@@ -62,9 +62,9 @@ List<Car> cars = [
             ]),
   Car(
       id: 3,
-      name: "Peugeot",
-      lastname: "208 2021",
-      title: "Peugeot 208 2021",
+      marca: "Peugeot",
+      modelo: "208",
+      anio: "2021",
       price: 5450000,
       size: 10,
       description: "Peugeot 208 1.6 Feline Tiptronic 2021 7500kms",
@@ -81,9 +81,9 @@ List<Car> cars = [
             ]),
   Car(
       id: 4,
-      name: "Fiat",
-      lastname: "Cronos 2021",
-      title: "Fiat Cronos 2021",
+      marca: "Fiat",
+      modelo: "Cronos",
+      anio: "2021",
       price: 4190000,
       size: 11,
       description: "Fiat Cronos 1.3 Gse Drive 2021 21000kms",
@@ -100,9 +100,9 @@ List<Car> cars = [
             ]),
   Car(
       id: 5,
-      name: "Ford",
-      lastname: "Ford Ka 2021",
-      title: "Ford Ka 1.5 S5p",
+      marca: "Ford",
+      modelo: "Ka",
+      anio: "2021",
       price: 3589900,
       size: 12,
       description: "Ford Ka 1.5 S5p 2021 20100kms",
@@ -119,9 +119,9 @@ List<Car> cars = [
             ]),
   Car(
       id: 6,
-      name: "Chevrolet",
-      lastname: "Trailblazer 2021",
-      title: "Chevrolet Trailblazer 2021",
+      marca: "Chevrolet",
+      modelo: "Trailblazer",
+      anio: "2021",
       price: 13949900,
       size: 12,
       description: "Chevrolet Trailblazer 2.8 Nueva Ltz Tdci 200cv 2021 23100kms",

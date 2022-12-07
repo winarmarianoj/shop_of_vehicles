@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/models/User.dart';
 import 'package:shop_of_vehicles/screens/profile/changeProfileUser.dart';
+import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
 
 class ProfileUser extends StatelessWidget {
 
@@ -20,12 +21,11 @@ class ProfileUser extends StatelessWidget {
           )
         ],
       ),
-      body: BodyScaffold(),
-
-     floatingActionButton: FloatingActionButton(
-       child: Icon( Icons.accessibility_new ),
-       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: ((context) => ChangeProfileUser())))
-     ),
+      body: BodyScaffold(),      
+      floatingActionButton: FloatingActionButton(
+        child: Icon( Icons.accessibility_new ),
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: ((context) => ChangeProfileUser())))
+      ),
    );
   }
 }
@@ -56,14 +56,14 @@ class InformacionUsuario extends StatelessWidget {
   const InformacionUsuario( this.user );
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      padding: EdgeInsets.all(20.0),
+    return 
+    Container(
+      width: double.infinity *2,
+      height: double.infinity * 5000,
+      padding: EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           Text('General', style: TextStyle( fontSize: 18, fontWeight: FontWeight.bold ) ),
           Divider(),
 

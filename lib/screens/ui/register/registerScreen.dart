@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
-import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
 import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
 import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
@@ -8,6 +7,9 @@ import 'package:shop_of_vehicles/screens/ui/login/widgets/card_container.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/screens/ui/register/decorations/registerDecorations.dart';
 import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
+import 'package:shop_of_vehicles/service/authenticationService.dart';
+import 'package:shop_of_vehicles/utils/bounceButton.dart';
+import 'package:shop_of_vehicles/utils/customPopup.dart';
 
 class RegisterScreen extends StatelessWidget {
   @override
@@ -46,8 +48,7 @@ class RegisterScreen extends StatelessWidget {
 class RegisterForm extends StatelessWidget {  
   @override
   Widget build(BuildContext context) {    
-     final registerForm = Provider.of<RegisterFormProvider>(context);
-     final loginForm = Provider.of<LoginFormProvider>(context);
+     var registerForm = Provider.of<RegisterFormProvider>(context);     
     return Container(
       child: Form(
         key: registerForm.formKey,
@@ -175,12 +176,28 @@ class RegisterForm extends StatelessWidget {
                   : () {
                       FocusScope.of(context).unfocus();
                       if (!registerForm.isValidForm()) return;
-                      registerForm.isLoading = true;
+                      //registerForm.isLoading = true;
                       Future.delayed(Duration(seconds: 5));
-                      loginForm.email = registerForm.email;
-                      loginForm.password = registerForm.password;
-                                           
-                      Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage(loginForm: loginForm,))));
+                      AuthenticationService service = AuthenticationService();
+                      registerForm = service.getRegisterUser(registerForm, context);
+                      if(registerForm.isLoading) {                        
+                        Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage())));
+                      }else{
+                        showDialog(context: context, 
+                          builder: (_) => CustomPopup(
+                              title: 'Resultado del Registro de Usuario',
+                              message: 'Error en el proceso de registro. Incorrectos los datos. Vuelva a intentar.',
+                              buttonAccept: BounceButton(
+                                buttonSize: ButtonSize.small,
+                                type: ButtonType.primary,
+                                label: 'OK',
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                        );                     
+                      }
                     }                    
             ),
           ],

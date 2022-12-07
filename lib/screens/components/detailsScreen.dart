@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
-import 'package:shop_of_vehicles/models/Van.dart';
-import 'package:shop_of_vehicles/screens/van/details/components/detailsBodyVan.dart';
+import 'package:shop_of_vehicles/screens/components/detailsBody.dart';
+import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 
-class DetailsScreenVan extends StatelessWidget {
-  final Van van;
-  const DetailsScreenVan({Key? key, required this.van}) : super(key: key);
+class DetailsScreen extends StatelessWidget {
+  final int id;
+  final String marca;
+  final String modelo;
+  const DetailsScreen({Key? key, required this.id, required this.marca, required this.modelo}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // each product have a color
-      //backgroundColor: product.color,
       appBar: buildAppBar(context),
-      body: DetailsBodyVan(van: van),
+      drawer: HomeDrawer(),
+      body: DetailsBody(id: id, marca: marca, modelo: modelo,),
     );
   }
 
@@ -24,7 +25,7 @@ class DetailsScreenVan extends StatelessWidget {
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
-          color: buttonBackVan,
+          color: buttonBackTruck,
         ),
         onPressed: () => Navigator.pop(context),
       ),

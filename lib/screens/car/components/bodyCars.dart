@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/models/Car.dart';
-import 'package:shop_of_vehicles/screens/car/components/itemCardCar.dart';
-import 'package:shop_of_vehicles/screens/car/details/detailsScreenCar.dart';
+import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
+import 'package:shop_of_vehicles/screens/components/itemCard.dart';
 
 class BodyCars extends StatelessWidget{
   const BodyCars({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class BodyCars extends StatelessWidget{
     return Stack(
       children: [
         Image.asset(
-          "assets/image/fondo2.jpg",
+          "assets/image/texture.jpg",
           width: 600,
           height: 700,
           fit: BoxFit.cover,
@@ -27,17 +27,21 @@ class BodyCars extends StatelessWidget{
                   itemCount: cars.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: kDefaultPaddin/3,
-                    crossAxisSpacing: kDefaultPaddin/3,
+                    mainAxisSpacing: defaultPaddingHome,
+                    crossAxisSpacing: defaultPaddingHome,
                     childAspectRatio: 0.75,
                   ),
-                  itemBuilder: (context, index) => ItemCardCar(
-                    car: cars[index],
+                  itemBuilder: (context, index) => ItemCard(
+                    id: cars[index].id,
+                    marca: cars[index].marca,
+                    modelo: cars[index].modelo,
                     press: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailsScreenCar(
-                          car: cars[index],
+                        builder: (context) => DetailsScreen(
+                          id: cars[index].id,
+                          marca: cars[index].marca,
+                          modelo: cars[index].modelo,
                         ),
                       ),
                     ),

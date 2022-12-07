@@ -26,8 +26,16 @@ class User {
     street: street ?? this.street,
     contacts: contacts ?? this.contacts,
   );
+}
 
-  static List<User> userList = [
+addUser(User user){
+  final newUser = [
+      ...userList,
+      user,
+    ];
+}
+
+List<User> userList = [
     User(
         id: 1,
         name: "Pepe",
@@ -52,6 +60,4 @@ class User {
                 
         ]
     ),
-  ];
-
-}
+];

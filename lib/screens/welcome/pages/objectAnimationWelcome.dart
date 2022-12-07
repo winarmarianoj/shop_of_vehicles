@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
-import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'dart:math';
-
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/welcome/classes/animateCar.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateCar64.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateFiat500.dart';
 import 'package:shop_of_vehicles/screens/welcome/classes/animateTruck.dart';
 import 'package:shop_of_vehicles/screens/welcome/classes/animateTruckRepar.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateTruckTrailer.dart';
 import 'package:shop_of_vehicles/screens/welcome/classes/animateVan.dart';
+import 'package:shop_of_vehicles/screens/welcome/classes/animateVanPickUp.dart';
 
 class ObectAnimationWelcome extends StatefulWidget { 
-  final LoginFormProvider loginForm; 
-  const ObectAnimationWelcome({Key? key, required this.loginForm}) : super(key: key); 
+  const ObectAnimationWelcome({Key? key, }) : super(key: key); 
   @override
-  State<ObectAnimationWelcome> createState() => _VehiclesAnimadoPageState(loginForm);
+  State<ObectAnimationWelcome> createState() => _VehiclesAnimadoPageState();
 }
 
 class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with SingleTickerProviderStateMixin {
-  final LoginFormProvider loginForm; 
-  
-  _VehiclesAnimadoPageState(this.loginForm);
+    
+  _VehiclesAnimadoPageState();
   
   
   late AnimationController controller;
@@ -29,6 +29,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
   late Animation<double> animationCar;
   late Animation<double> animationVan;
   late Animation<double> animationTruck;
+  late Animation<double> animationTruckTrailer;
   late Animation<double> inAnimation;
   late Animation<double> enlargeAnimation;
   late Animation<double> shrinkAnimation;
@@ -82,6 +83,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
     animationCar = Tween(begin: -128.0, end: 600.0).animate(controller);
     animationVan = Tween(begin: -50.0, end: 600.0).animate(controller);
     animationTruck = Tween(begin: 610.0, end: -400.0).animate(controller);
+    animationTruckTrailer = Tween(begin: 700.0, end: -420.0).animate(controller);
     
     animationCar.addListener(() {
         setState(() {});        
@@ -92,9 +94,12 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
     animationTruck.addListener(() {
         setState(() {});
          if(controller.status == AnimationStatus.completed){           
-           Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck(loginForm: loginForm,))));
+           Navigator.push(context, MaterialPageRoute(builder: ((context) => HomeTruck())));
          }
             
+    });
+    animationTruckTrailer.addListener(() {
+        setState(() {});        
     });
 
     controller.addListener((){
@@ -141,6 +146,26 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
             right: animationTruck.value,
             top: 190.0,
           ),
+          new Positioned(
+            child: AnimateCar64(),
+            left: animationTruck.value,
+            top: 420.0,
+          ),
+          new Positioned(
+            child: AnimateFiat500(),
+            left: animationCar.value,
+            top: 480.0,
+          ),
+          new Positioned(
+            child: AnimateVanPickUp(),
+            left: animationTruck.value,
+            top: 600.0,
+          ),          
+          new Positioned(
+            child: AnimateTruckTrailer(),
+            left: animationTruckTrailer.value,
+            top: 670.0,
+          ),
           Center(
             child: Opacity(
               // Aprovechamos el valor de outAnimation para definir la opacidad y desaparecer al final
@@ -157,12 +182,12 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
                   child: Transform.translate(
                     // La traslación dx utiliza el outAnimation para la salida mienstra dy utiliza inAnimation para la entrada
                     offset: Offset(outAnimation.value * width, inAnimation.value * height),
-                    child: Container(width: 220.0, height: 100.0, color: themeWelcomeTextBackground, 
+                    child: Container(width: 120.0, height: 50.0, color: themeWelcomeTextBackground, 
                       child: RichText(
                           text: TextSpan(
                             children: [                              
                               TextSpan(
-                                text: "Bienvenido \n" + loginForm.email + "!!!",
+                                text: "Bienvenido!!!",
                                 style: Theme.of(context).textTheme.headline6?.copyWith(
                                     color: themeWelcomeText, fontWeight: FontWeight.bold),
                               ),
@@ -175,8 +200,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
               ),
             ),
           ),                
-        ],
-        //textDirection: TextDirection.ltr,        
+        ],    
       ),      
     );    
   }    

@@ -141,7 +141,7 @@ class _LoginForm extends StatelessWidget {
                       AuthenticationService service = AuthenticationService();
                       loginForm = service.getLoginUser(loginForm, context);
                       if(loginForm.isLoading) {
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage(loginForm: loginForm,))));
+                        Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage())));
                       }else{
                         showDialog(context: context, 
                           builder: (_) => CustomPopup(
