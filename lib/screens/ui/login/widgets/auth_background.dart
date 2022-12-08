@@ -51,11 +51,14 @@ class _PurpleBox extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(child: _Bubble(), top: 95, left: 25),
-          Positioned(child: _Bubble(), top: 90, left: 30),
-          Positioned(child: _Bubble(), top: -40, left: -30),
-          Positioned(child: _Bubble(), top: -50, right: -20),
-          Positioned(child: _Bubble(), bottom: -50, left: 10),
-          Positioned(child: _Bubble(), bottom: 120, right: 20),
+          Positioned(child: _Bubble(), top: 160, left: 80),
+          Positioned(child: _Bubble(), top: 40, left: 90),
+          Positioned(child: _Bubble(), top: 70, right: 80),
+          Positioned(child: _Bubble(), bottom: 50, left: 10),
+          Positioned(child: _Bubble(), bottom: 135, right: 20),
+          Positioned(child: _Bubble(), bottom: 90, right: 80),
+          Positioned(child: _Bubble(), bottom: 45, right: 140),
+          Positioned(child: _Bubble(), bottom: 30, right: 10),
         ],
       ),
     );
@@ -76,11 +79,11 @@ class _Bubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 50,
-      height: 100,
+      height: 50,
      
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: Color.fromARGB(11, 238, 13, 13)),
+          color: Color.fromARGB(90, 13, 185, 238)),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
+import 'package:shop_of_vehicles/screens/search/searchVan.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 import 'package:shop_of_vehicles/screens/van/components/bodyVans.dart';
@@ -58,12 +59,12 @@ class HomeVan extends StatelessWidget{
           icon: const Icon(Icons.search),
           color: colorIconAppBar,
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => SearchVan(),
               ),
-            );*/
+            );
           },
         ),
       ],

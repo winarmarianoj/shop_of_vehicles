@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/screens/search/searchTruck.dart';
 import 'package:shop_of_vehicles/screens/truck/components/bodyTrucks.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
@@ -53,17 +54,17 @@ class HomeTruck extends StatelessWidget{
             );
           }, 
         ),
-        const SizedBox(width: kDefaultPaddin / 2),
+        const SizedBox(width: kDefaultPaddin / 2),        
         IconButton(
           icon: const Icon(Icons.search),
           color: colorIconAppBar,
           onPressed: () {
-            /*Navigator.push(
+            Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => LoginScreen(),
+                builder: (context) => SearchTruck(),
               ),
-            );*/
+            );
           },
         ),
       ],
@@ -71,3 +72,5 @@ class HomeTruck extends StatelessWidget{
   }
 
 }
+
+

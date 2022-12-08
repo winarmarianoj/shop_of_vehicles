@@ -68,7 +68,19 @@ class BodyDrawer extends StatelessWidget{
                   children: [
                     const TextSpan(text: "Web Site: "),   
                     TextSpan(
-                      text: "Autos/Camionetas/Camiones",
+                      text: "Shop of Vehicles",
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: themeDrawerText, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),    
+              const SizedBox(height: 10),
+              RichText(
+                text: TextSpan(
+                  children: [                    
+                    TextSpan(
+                      text: "Autos - Camionetas - Camiones",
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: themeDrawerText, fontWeight: FontWeight.bold),
                     ),
