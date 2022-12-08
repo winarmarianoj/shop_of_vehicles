@@ -22,7 +22,7 @@ class FirstSearch extends State<SearchCar>{
       drawer: HomeDrawer(),
       body: Center(
         child: SizedBox(
-          width: 320,
+          width: 350,
           child: Column(
             children: [
               TextField(

@@ -182,7 +182,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
                   child: Transform.translate(
                     // La traslación dx utiliza el outAnimation para la salida mienstra dy utiliza inAnimation para la entrada
                     offset: Offset(outAnimation.value * width, inAnimation.value * height),
-                    child: Container(width: 120.0, height: 50.0, color: themeWelcomeTextBackground, 
+                    child: Container(width: 130.0, height: 50.0, color: themeWelcomeTextBackground, 
                       child: RichText(
                           text: TextSpan(
                             children: [                              

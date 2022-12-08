@@ -5,7 +5,8 @@ import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
 import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
-import 'package:shop_of_vehicles/theme/theme.dart';
+import 'package:shop_of_vehicles/theme/menuTheme.dart';
+import 'package:shop_of_vehicles/theme/themeChange.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,21 +17,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LoginFormProvider()),
         ChangeNotifierProvider(create: (_) => RegisterFormProvider()),
-        ChangeNotifierProvider(create: (_) => new ThemeChanger( 2 )),
-        BlocProvider(create: ( _ ) => new UserCubit() ),
+        ChangeNotifierProvider(create: (_) => ThemeChanger(6)),
+        BlocProvider(create: ( _ ) => UserCubit() ),
       ],
-      child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Shop of Vehicles',
-          initialRoute: 'login',
-          home: LoginScreen(),
-          theme:
-              ThemeData.light().copyWith(scaffoldBackgroundColor: Colors.grey[300]),
-        ),      
+      child: Builder(
+        builder: (context) {
+          final appTheme = Provider.of<ThemeChanger>(context);
+          return MaterialApp(            
+            debugShowCheckedModeBanner: false,
+            title: 'Shop of Vehicles',
+            initialRoute: 'login',
+            home: LoginScreen(),
+            //theme: appTheme.darkOne ? themeDarkTwo : themeLightTwo, 
+            theme: appTheme.darkTheme ? themeDarkOne : themeLightOne, 
+          );
+        }
+      ),      
     );     
   } 
 }
