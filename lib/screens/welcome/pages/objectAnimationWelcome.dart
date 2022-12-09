@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'dart:math';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
@@ -187,7 +188,7 @@ class _VehiclesAnimadoPageState extends State<ObectAnimationWelcome> with Single
                           text: TextSpan(
                             children: [                              
                               TextSpan(
-                                text: "Bienvenido!!!",
+                                text: textWelcomeTitleAnimation,
                                 style: Theme.of(context).textTheme.headline6?.copyWith(
                                     color: themeWelcomeText, fontWeight: FontWeight.bold),
                               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
@@ -26,10 +27,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 10),
-                    Text(
-                      'Login',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
+                    Text(textTitle, style: Theme.of(context).textTheme.headline4,),
                     const SizedBox(height: 30),
                     ChangeNotifierProvider(
                       create: (_) => LoginFormProvider(),
@@ -39,12 +37,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 50),
-              const Text(
-                'Crea una nueva cuenta',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
+              const Text(textNewAccount, style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,),
               ),
               const SizedBox(height: 10),
               MaterialButton(
@@ -56,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                   child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 80,
                       vertical: 15),
-                      child: Text('Registrarse' ,                     
+                      child: Text(textButtonActionRegister ,                     
                         style: const TextStyle(color: themeLoginStateProccess),
                       )),                   
                   onPressed: () {
@@ -86,18 +79,14 @@ class _LoginForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: 'tucasilladeemail@gmail.com',
-                  labelText: 'Correo electrónico',
+                  hintText: textYouEmail,
+                  labelText: textLabelTitleEmail,
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => loginForm.email = value,
               validator: (value) {
-                String pattern =
-                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                String pattern = textReggexPatternEmail;
                 RegExp regExp = new RegExp(pattern);
-
-                return regExp.hasMatch(value ?? '')
-                    ? null
-                    : 'El valor ingresado no es un correo valido';
+                return regExp.hasMatch(value ?? '') ? null : textInvalidData;
               },
             ),
             SizedBox(height: 30),
@@ -106,14 +95,12 @@ class _LoginForm extends StatelessWidget {
               obscureText: true,
               keyboardType: TextInputType.text,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: '*****',
-                  labelText: 'Contraseña',
+                  hintText: textFormatPassword,
+                  labelText: textLabelTitlePassword,
                   prefixIcon: Icons.remove_red_eye_outlined),
               onChanged: (value) => loginForm.password = value,
               validator: (value) {
-                return (value != null && value.length >= 6)
-                    ? null
-                    : 'La contraseña debe de ser de 6 caracteres';
+                return (value != null && value.length >= 6) ? null : textInvalidDataPassword;
               },
             ),
             const SizedBox(height: 30),
@@ -145,12 +132,12 @@ class _LoginForm extends StatelessWidget {
                       }else{
                         showDialog(context: context, 
                           builder: (_) => CustomPopup(
-                              title: 'Resultado del Login',
-                              message: 'Error en el proceso de login. Incorrecto password o su usuario no existe.',
+                              title: textResultErrorLoginTitle,
+                              message: textResultInvalidDataLogin,
                               buttonAccept: BounceButton(
                                 buttonSize: ButtonSize.small,
                                 type: ButtonType.primary,
-                                label: 'OK',
+                                label: textButtonShowDialogLogin,
                                 onPressed: () {
                                   /*context.read<CreditCardListBloc>().add(
                                         CreditCardListEvent.toggleLock(

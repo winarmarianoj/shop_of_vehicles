@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/models/Car.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
 import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
@@ -30,7 +30,7 @@ class FirstSearch extends State<SearchCar>{
                 onChanged: (value) {
                   setState(() {});
                 },
-                decoration: InputDecoration(hintText: "Buscar"),
+                decoration: InputDecoration(hintText: textDecorationHintTextSearch),
               ),
               Expanded(
                 child: SearchVehicles(text: searchController.text,),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
 import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
 import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
@@ -24,10 +25,7 @@ class RegisterScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const SizedBox(height: 10),
-                    Text(
-                      'Register',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
+                    Text(textTitleRegister, style: Theme.of(context).textTheme.headline4,),
                     const SizedBox(height: 30),
                     ChangeNotifierProvider(
                       create: (_) => RegisterFormProvider(),
@@ -59,16 +57,16 @@ class RegisterForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.text,
               decoration: RegisterDecorations.registerDecoration(
-                  hintText: 'ingrese su nombre',
-                  labelText: 'Name',
+                  hintText: textHintTextNameRegister,
+                  labelText: textLabelNameRegister,
                   prefixIcon: Icons.title),
               onChanged: (value) => registerForm.name = value,
               validator: (value) {
-                String pattern = r'^[a-zA-Z ]{2,50}$';
+                String pattern = textReggexPatternByString;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null
-                    : 'El valor ingresado no es un texto valido';
+                    : textInvalidDataFormat;
               },
             ),
             const SizedBox(height: 10),
@@ -76,16 +74,16 @@ class RegisterForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.text,
               decoration: RegisterDecorations.registerDecoration(
-                  hintText: 'ingrese su apellido',
-                  labelText: 'Apellido',
+                  hintText: textHintTextLastNameRegister,
+                  labelText: textLabelLastNameRegister,
                   prefixIcon: Icons.title),
               onChanged: (value) => registerForm.lastName = value,
               validator: (value) {
-                String pattern = r'^[a-zA-Z ]{2,50}$';
+                String pattern = textReggexPatternByString;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null
-                    : 'El valor ingresado no es un texto valido';
+                    : textInvalidDataFormat;
               },
             ),
             const SizedBox(height: 10),
@@ -93,16 +91,16 @@ class RegisterForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.text,
               decoration: RegisterDecorations.registerDecoration(
-                  hintText: 'ingrese su telefono',
-                  labelText: 'Telefono',
+                  hintText: textHintTextPhoneRegister,
+                  labelText: textLabelPhoneRegister,
                   prefixIcon: Icons.phone),
               onChanged: (value) => registerForm.phone = value,
               validator: (value) {
-                String pattern = r'^[0-9]$';
+                String pattern = textReggexPatternByNumber;
                 RegExp regExp = new RegExp(pattern);
                 return (value != null && value.length <= 10)
                     ? null
-                    : 'El valor ingresado no es un numero valido';
+                    : textInvalidDataFormat;
               },
             ),
             const SizedBox(height: 10),
@@ -110,19 +108,14 @@ class RegisterForm extends StatelessWidget {
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: 'tuemail@gmail.com',
-                  labelText: 'Correo electrónico',
+                  hintText: textYouEmail,
+                  labelText: textLabelTitleEmail,
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => registerForm.email = value,
               validator: (value) {
-                String pattern =
-                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+                String pattern = textReggexPatternEmail;                    
                 RegExp regExp = new RegExp(pattern);
-
-                return regExp.hasMatch(value ?? '')
-                    ? null
-                    : 'El valor ingresado no es un correo valido';
-              },
+                return regExp.hasMatch(value ?? '') ? null : textInvalidData; },
             ),
             const SizedBox(height: 10),
             TextFormField(
@@ -130,31 +123,28 @@ class RegisterForm extends StatelessWidget {
               obscureText: true,
               keyboardType: TextInputType.text,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: '*****',
-                  labelText: 'Contraseña',
+                  hintText: textFormatPassword,
+                  labelText: textLabelTitlePassword,
                   prefixIcon: Icons.remove_red_eye_outlined),
               onChanged: (value) => registerForm.password = value,
               validator: (value) {
-                return (value != null && value.length >= 6)
-                    ? null
-                    : 'La contraseña debe de ser de 6 caracteres';
-              },
+                return (value != null && value.length >= 6) ? null : textInvalidDataPassword; },
             ),
             const SizedBox(height: 10),
             TextFormField(           
               autocorrect: false,
               keyboardType: TextInputType.text,
               decoration: RegisterDecorations.registerDecoration(
-                  hintText: 'ingrese su direccion',
-                  labelText: 'Domicilio',
+                  hintText: textHintTextStreetRegister,
+                  labelText: textLabelStreetRegister,
                   prefixIcon: Icons.home_max),
               onChanged: (value) => registerForm.street = value,
               validator: (value) {
-                String pattern = r'^[a-zA-Z 0-9 ]{2,50}$';
+                String pattern = textReggexPatternByString;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null
-                    : 'El valor ingresado no es un texto valido';
+                    : textInvalidDataFormat;
               },
             ),
             const SizedBox(height: 30),
@@ -185,12 +175,12 @@ class RegisterForm extends StatelessWidget {
                       }else{
                         showDialog(context: context, 
                           builder: (_) => CustomPopup(
-                              title: 'Resultado del Registro de Usuario',
-                              message: 'Error en el proceso de registro. Incorrectos los datos. Vuelva a intentar.',
+                              title: textResultErrorRegisterTitle,
+                              message: textResultInvalidDataRegister,
                               buttonAccept: BounceButton(
                                 buttonSize: ButtonSize.small,
                                 type: ButtonType.primary,
-                                label: 'OK',
+                                label: textButtonShowDialogRegister,
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },

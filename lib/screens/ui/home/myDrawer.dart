@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/screens/ui/home/optionRoutes.dart';
 import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
@@ -21,13 +22,13 @@ class HomeDrawer extends StatelessWidget {
         switch ( state.runtimeType ) {
           
           case UserInitial:
-            return Center(child: Text('No hay información del usuario'));
+            return Center(child: Text(textNoDataUserInitial));
 
           case UserActive:
             return BodyDrawer(user: (state as UserActive).user, );
 
           default:
-            return Center( child: Text('Estado no reconocido '));
+            return Center( child: Text(textUnknownState));
         }
     });
   }  
@@ -57,7 +58,7 @@ class BodyDrawer extends StatelessWidget{
                 RichText(
                   text: TextSpan(
                     children: [
-                      const TextSpan(text: "Bienvenido: "),   
+                      const TextSpan(text: textWelcome),   
                       TextSpan(
                         text: user.name + " " + user.lastName,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -70,9 +71,9 @@ class BodyDrawer extends StatelessWidget{
                 RichText(
                   text: TextSpan(
                     children: [
-                      const TextSpan(text: "Web Site: "),   
+                      const TextSpan(text: textWebSite),   
                       TextSpan(
-                        text: "Shop of Vehicles",
+                        text: textWebSiteName,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: themeDrawerText, fontWeight: FontWeight.bold),
                       ),
@@ -84,7 +85,7 @@ class BodyDrawer extends StatelessWidget{
                   text: TextSpan(
                     children: [                    
                       TextSpan(
-                        text: "Autos - Camionetas - Camiones",
+                        text: textTypeVehiclesWebSite,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: themeDrawerText, fontWeight: FontWeight.bold),
                       ),
@@ -95,9 +96,9 @@ class BodyDrawer extends StatelessWidget{
                 RichText(
                   text: TextSpan(
                     children: [
-                      const TextSpan(text: "Contacto: "),   
+                      const TextSpan(text: textContactTitle),   
                       TextSpan(
-                        text: "119876543 - 1123459877",
+                        text: textContactPhone,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                             color: themeDrawerText, fontWeight: FontWeight.bold),
                       ),
@@ -110,7 +111,7 @@ class BodyDrawer extends StatelessWidget{
                     children: [
                       //const TextSpan(text: "Email: "),   
                       TextSpan(
-                        text: "shopofvehicles@algunlugar.com.ar",
+                        text: textContactEmail,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: themeDrawerText, fontWeight: FontWeight.bold),
                       ),
@@ -120,7 +121,6 @@ class BodyDrawer extends StatelessWidget{
               ],
             ),
           ), 
-          //TODO lo nuevo
           Padding(
             padding: const EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
             child: SafeArea(            
@@ -129,7 +129,7 @@ class BodyDrawer extends StatelessWidget{
                 height: 100,
                 child: CircleAvatar(
                   backgroundColor: accentColor,
-                  child: Text('SV', style: TextStyle( fontSize: 50, color: Colors.black),),
+                  child: Text(textInitialsWebSiteName, style: TextStyle( fontSize: 50, color: Colors.black),),
                 ),
               ),
             ),
@@ -139,7 +139,7 @@ class BodyDrawer extends StatelessWidget{
           ),
           ListTile(
             leading: Icon( Icons.lightbulb_outline, color: accentColor ),
-            title: Text('Dark Mode'),
+            title: Text(textDarkModeTheme),
             trailing: 
             Switch.adaptive(
               value: appTheme.darkTheme,
@@ -154,7 +154,7 @@ class BodyDrawer extends StatelessWidget{
             right: false,
             child: ListTile(
               leading: Icon( Icons.add_to_home_screen, color: accentColor ),
-              title: Text('Custom Theme'),
+              title: Text(textCustomModeTheme),
               trailing: Switch.adaptive(
                 value: appTheme.customTheme, 
                 activeColor: accentColor,
@@ -164,7 +164,7 @@ class BodyDrawer extends StatelessWidget{
           ),
           ListTile(
             leading: Icon(Icons.logout, color: accentColor ),
-            title: Text('Logout'),
+            title: Text(textLogout),
             onTap: () {
               context.read<UserCubit>().logout();
               Navigator.push(
@@ -186,6 +186,5 @@ class BodyDrawer extends StatelessWidget{
         themeDrawerBackground, 
       ])
   );
-
 
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/screens/components/description.dart';
 
 class DetailsBody extends StatelessWidget {

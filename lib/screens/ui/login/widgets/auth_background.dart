@@ -83,7 +83,7 @@ class _Bubble extends StatelessWidget {
      
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: Color.fromARGB(90, 13, 185, 238)),
+          color: themeColorDecorationBubble),
     );
   }
 }

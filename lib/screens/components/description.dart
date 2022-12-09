@@ -6,6 +6,7 @@ import 'package:shop_of_vehicles/models/Car.dart';
 import 'package:shop_of_vehicles/models/Contact.dart';
 import 'package:shop_of_vehicles/models/Truck.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/models/Van.dart';
 
@@ -119,7 +120,7 @@ class DescriptionVehicle extends StatelessWidget{
               RichText(
                 text: TextSpan(
                   children: [
-                    const TextSpan(text: "Precio en Dolares\n"), 
+                    const TextSpan(text: textLabelDescriptionVehicles), 
                     TextSpan(
                       text: "\$${price}",
                       style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -152,11 +153,11 @@ class DescriptionVehicle extends StatelessWidget{
                     showDialog(
                       context: context, 
                       builder: (context) => AlertDialog(
-                        title: Text("Contacto del Propietario"),
-                        content: Text("Ya se ha agregado el contacto a su perfil de Contactos."),
+                        title: Text(textShowDialogTitleAddContactProfile),
+                        content: Text(textShowDialogBodyAddContactProfile),
                         actions: <Widget>[
                           TextButton(
-                            child: Text("OK"),
+                            child: Text(textButtonResponseShowDialog),
                             onPressed: () {
                               Navigator.pop(context);
                             },

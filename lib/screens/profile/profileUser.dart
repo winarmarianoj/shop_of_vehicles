@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/models/User.dart';
 import 'package:shop_of_vehicles/screens/profile/changeProfileUser.dart';
@@ -11,7 +12,7 @@ class ProfileUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile User'),
+        title: Text(textTitleProfile),
         actions: [          
           IconButton(
             icon: const Icon(Icons.local_shipping),
@@ -51,11 +52,11 @@ class BodyScaffold extends StatelessWidget {
       builder: ( _ , state) {
         switch ( state.runtimeType ) {          
           case UserInitial:
-            return Center(child: Text('No hay información del usuario'));
+            return Center(child: Text(textNoDataUserInitial));
           case UserActive:
             return InformacionUsuario( (state as UserActive).user );
           default:
-            return Center( child: Text('Estado no reconocido '));
+            return Center( child: Text(textUnknownState));
         }
     });
   }

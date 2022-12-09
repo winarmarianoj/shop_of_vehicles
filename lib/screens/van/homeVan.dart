@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/screens/car/homeCar.dart';
 import 'package:shop_of_vehicles/screens/search/searchVan.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';

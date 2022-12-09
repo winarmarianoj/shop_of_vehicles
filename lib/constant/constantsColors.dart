@@ -11,11 +11,6 @@ const colorIconAppBar = Colors.white;
 const appBarBackground = Color.fromARGB(255, 15, 157, 228);
 const smartphoneColor = Color.fromARGB(255, 232, 248, 1);
 
-const kDefaultPaddin = 20.0;
-const defaultPaddingTextObjectsHome = 4.0;
-const defaultPaddingImageObjectsHome = 2.0;
-const defaultPaddingHome = 0.9;
-
 //TODO CAR
 const itemCardBackgroundCar = Colors.black;
 const buttonBackCar = Colors.white;
@@ -46,6 +41,7 @@ const themeCardContainerBoxDecorationCardShape = Colors.white;
 const themeCardContainerBoxDecorationBoxShadow = Colors.black12;
 const themeAuthBackgroundGradiantOne = Color.fromARGB(255, 79, 156, 63);
 const themeAuthBackgroundGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
+const themeColorDecorationBubble = Color.fromARGB(90, 13, 185, 238);
 
 //TODO ANIMATIONS
 const themeWelcomeTextBackground = Color.fromARGB(29, 3, 88, 236);

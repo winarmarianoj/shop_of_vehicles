@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
           final appTheme = Provider.of<ThemeChanger>(context);
           return MaterialApp(            
             debugShowCheckedModeBanner: false,
-            title: 'Shop of Vehicles',
-            initialRoute: 'login',
+            title: textTitleWebSite,
+            initialRoute: textInitialRouteApp,
             home: LoginScreen(),
             //theme: appTheme.darkOne ? themeDarkTwo : themeLightTwo, 
             theme: appTheme.darkTheme ? themeDarkOne : themeLightOne, 

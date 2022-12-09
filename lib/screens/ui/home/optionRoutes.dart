@@ -12,7 +12,6 @@ class OptionRoutes extends StatelessWidget {
 
     final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
 
-
     return ListView.separated(
       physics: BouncingScrollPhysics(),
       separatorBuilder: ( context, i) => Divider(
@@ -20,7 +19,6 @@ class OptionRoutes extends StatelessWidget {
       ), 
       itemCount: pageRoutes.length,
       itemBuilder: (context, i) => ListTile(
-
         leading: FaIcon( pageRoutes[i].icon , color: appTheme.accentColor ),
         title: Text( pageRoutes[i].titulo ),
         trailing: Icon( Icons.chevron_right, color: appTheme.accentColor ),
@@ -28,7 +26,6 @@ class OptionRoutes extends StatelessWidget {
           Navigator.push(context,
            MaterialPageRoute(builder: (context)=> pageRoutes[i].page ));
         },
-
       ), 
     );
   }
