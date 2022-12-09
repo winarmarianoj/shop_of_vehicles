@@ -11,12 +11,12 @@ class BodyTrucks extends StatelessWidget{
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        /* Image.asset(
+        Image.asset(
           "assets/image/texture.jpg",
           width: 600,
           height: 700,
           fit: BoxFit.cover,
-        ), */
+        ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[        

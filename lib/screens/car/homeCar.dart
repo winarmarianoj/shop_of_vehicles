@@ -20,7 +20,7 @@ class HomeCar extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: appBarBackground,
+      //backgroundColor: appBarBackground,
       elevation: 0,
       /*leading: IconButton(
         icon: const Icon(Icons.arrow_back),
@@ -31,7 +31,7 @@ class HomeCar extends StatelessWidget{
         IconButton(
           icon: const Icon(Icons.airport_shuttle),
           tooltip: 'Home Vans',
-          color: colorIconAppBar,
+          //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
@@ -44,7 +44,7 @@ class HomeCar extends StatelessWidget{
         IconButton(
           icon: const Icon(Icons.local_shipping),
           tooltip: 'Home Trucks',
-          color: colorIconAppBar,
+          //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
@@ -57,7 +57,7 @@ class HomeCar extends StatelessWidget{
         const SizedBox(width: kDefaultPaddin / 2),
         IconButton(
           icon: const Icon(Icons.search),
-          color: colorIconAppBar,
+          //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,

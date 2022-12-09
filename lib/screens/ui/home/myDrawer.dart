@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
-import 'package:shop_of_vehicles/screens/profile/profileUser.dart';
 import 'package:shop_of_vehicles/screens/ui/home/optionRoutes.dart';
 import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_of_vehicles/theme/menuTheme.dart';
 import 'package:shop_of_vehicles/theme/themeChange.dart';
 import '../../../models/User.dart';
 
@@ -47,11 +45,11 @@ class BodyDrawer extends StatelessWidget{
     final accentColor = appTheme.currentTheme.accentColor;
 
     return Drawer(
-      //backgroundColor: themeDrawerBackground,
       width: 280,
         child: Column(
         children: [
           DrawerHeader(
+            padding: const EdgeInsets.fromLTRB(25.0, 15.0, 20.0, 1.0),
             duration: transitionDuration,
             decoration: colorsShopOfVehicles(),
             child: Column(
@@ -63,7 +61,7 @@ class BodyDrawer extends StatelessWidget{
                       TextSpan(
                         text: user.name + " " + user.lastName,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            color: themeDrawerText, fontWeight: FontWeight.bold),
+                            color: themeDrawerText , fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
@@ -119,18 +117,20 @@ class BodyDrawer extends StatelessWidget{
                     ],
                   ),
                 ),    
-                const SizedBox(height: 5),
               ],
             ),
           ), 
           //TODO lo nuevo
-          SafeArea(
-            child: Container(
-              width: double.infinity,
-              height: 70,
-              child: CircleAvatar(
-                backgroundColor: accentColor,
-                child: Text('SV', style: TextStyle( fontSize: 50),),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
+            child: SafeArea(            
+              child: SizedBox(             
+                width: double.infinity,
+                height: 100,
+                child: CircleAvatar(
+                  backgroundColor: accentColor,
+                  child: Text('SV', style: TextStyle( fontSize: 50, color: Colors.black),),
+                ),
               ),
             ),
           ),
@@ -148,48 +148,32 @@ class BodyDrawer extends StatelessWidget{
             ),
           ),
           SafeArea(
-              bottom: true,
-              top: false,
-              left: false,
-              right: false,
-              child: ListTile(
-                leading: Icon( Icons.add_to_home_screen, color: accentColor ),
-                title: Text('Custom Theme'),
-                trailing: Switch.adaptive(
-                  value: appTheme.customTheme, 
-                  activeColor: accentColor,
-                  onChanged: ( value ) => appTheme.customTheme = value
-                ),
+            bottom: true,
+            top: false,
+            left: false,
+            right: false,
+            child: ListTile(
+              leading: Icon( Icons.add_to_home_screen, color: accentColor ),
+              title: Text('Custom Theme'),
+              trailing: Switch.adaptive(
+                value: appTheme.customTheme, 
+                activeColor: accentColor,
+                onChanged: ( value ) => appTheme.customTheme = value
               ),
             ),
-          
-
-        /*
+          ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Profile'),
-            onTap: () {              
+            leading: Icon(Icons.logout, color: accentColor ),
+            title: Text('Logout'),
+            onTap: () {
+              context.read<UserCubit>().logout();
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ProfileUser(),
+                  builder: (context) => LoginScreen(),
                 ),
               );
             }
-        ), */
-
-          ListTile(
-              leading: Icon(Icons.logout_outlined),
-              title: Text('Logout'),
-              onTap: () {
-                context.read<UserCubit>().logout();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
-                  ),
-                );
-              }
           ),
         ],
       )

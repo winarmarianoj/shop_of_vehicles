@@ -25,7 +25,7 @@ class ProfileUser extends StatelessWidget {
             }, 
           ),
           IconButton(
-            icon: Icon( Icons.exit_to_app ), 
+            icon: Icon( Icons.logout), 
             onPressed: () {
               context.read<UserCubit>().logout();
             },            

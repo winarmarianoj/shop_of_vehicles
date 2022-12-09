@@ -44,7 +44,7 @@ class FirstSearch extends State<SearchCar>{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      backgroundColor: appBarBackground,
+      //backgroundColor: appBarBackground,
       elevation: 0,
       actions: <Widget>[
         IconButton(

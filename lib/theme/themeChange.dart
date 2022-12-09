@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:shop_of_vehicles/theme/menuTheme.dart';
 
 class ThemeChanger with ChangeNotifier {
 
@@ -19,7 +19,7 @@ class ThemeChanger with ChangeNotifier {
 
       case 1: // light
         _darkTheme   = false;
-        _customTheme = false;
+        _customTheme = true;
         _currentTheme = ThemeData.light();
       break;
 
@@ -31,19 +31,17 @@ class ThemeChanger with ChangeNotifier {
         );
       break;
 
-      case 3: // Dark
+      /* case 3: // Dark
         _darkTheme   = false;
         _customTheme = true;
-      break;
+      break; */
 
       default:
         _darkTheme = false;
         _darkTheme = false;
-        _currentTheme = ThemeData.light();
+        _currentTheme = themeDarkThree;
     }
   }
-
-
 
   set darkTheme( bool value ) {
     _customTheme = false;
