@@ -62,7 +62,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.title),
               onChanged: (value) => registerForm.name = value,
               validator: (value) {
-                String pattern = textReggexPatternByString;
+                String pattern = textRegexPatternByString;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null
@@ -79,7 +79,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.title),
               onChanged: (value) => registerForm.lastName = value,
               validator: (value) {
-                String pattern = textReggexPatternByString;
+                String pattern = textRegexPatternByString;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null
@@ -96,7 +96,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.phone),
               onChanged: (value) => registerForm.phone = value,
               validator: (value) {
-                String pattern = textReggexPatternByNumber;
+                String pattern = textRegexPatternByPhoneNumber;
                 RegExp regExp = new RegExp(pattern);
                 return (value != null && value.length <= 10)
                     ? null
@@ -113,7 +113,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => registerForm.email = value,
               validator: (value) {
-                String pattern = textReggexPatternEmail;                    
+                String pattern = textRegexPatternEmail;                    
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') ? null : textInvalidData; },
             ),
@@ -128,7 +128,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.remove_red_eye_outlined),
               onChanged: (value) => registerForm.password = value,
               validator: (value) {
-                return (value != null && value.length >= 6) ? null : textInvalidDataPassword; },
+                return (value != null && value.length > 6) ? null : textInvalidDataPassword; },
             ),
             const SizedBox(height: 10),
             TextFormField(           
@@ -140,7 +140,7 @@ class RegisterForm extends StatelessWidget {
                   prefixIcon: Icons.home_max),
               onChanged: (value) => registerForm.street = value,
               validator: (value) {
-                String pattern = textReggexPatternByString;
+                String pattern = textRegexPatternByStringWithNumber;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') && (value != null && value.length <= 50)
                     ? null

@@ -84,7 +84,7 @@ class _LoginForm extends StatelessWidget {
                   prefixIcon: Icons.alternate_email_rounded),
               onChanged: (value) => loginForm.email = value,
               validator: (value) {
-                String pattern = textReggexPatternEmail;
+                String pattern = textRegexPatternEmail;
                 RegExp regExp = new RegExp(pattern);
                 return regExp.hasMatch(value ?? '') ? null : textInvalidData;
               },
@@ -100,7 +100,7 @@ class _LoginForm extends StatelessWidget {
                   prefixIcon: Icons.remove_red_eye_outlined),
               onChanged: (value) => loginForm.password = value,
               validator: (value) {
-                return (value != null && value.length >= 6) ? null : textInvalidDataPassword;
+                return (value != null && value.length > 6) ? null : textInvalidDataPassword;
               },
             ),
             const SizedBox(height: 30),
@@ -139,11 +139,6 @@ class _LoginForm extends StatelessWidget {
                                 type: ButtonType.primary,
                                 label: textButtonShowDialogLogin,
                                 onPressed: () {
-                                  /*context.read<CreditCardListBloc>().add(
-                                        CreditCardListEvent.toggleLock(
-                                          card: card,
-                                        ),
-                                      );*/
                                   Navigator.pop(context);
                                 },
                               ),

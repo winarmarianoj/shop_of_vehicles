@@ -9,6 +9,8 @@ import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/models/Van.dart';
+import 'package:shop_of_vehicles/utils/bounceButton.dart';
+import 'package:shop_of_vehicles/utils/customPopup.dart';
 
 class Description extends StatelessWidget {
   final int id;
@@ -149,22 +151,21 @@ class DescriptionVehicle extends StatelessWidget{
                   ),
                   onPressed: () {
                     Contact contact = Contact(name: marca, lastname: modelo, phone: phone, email: email);
-                    context.read<UserCubit>().addContact(contact);
-                    showDialog(
-                      context: context, 
-                      builder: (context) => AlertDialog(
-                        title: Text(textShowDialogTitleAddContactProfile),
-                        content: Text(textShowDialogBodyAddContactProfile),
-                        actions: <Widget>[
-                          TextButton(
-                            child: Text(textButtonResponseShowDialog),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                          ),
-                        ],
-                      ),
-                    );
+                    context.read<UserCubit>().addContact(contact);                  
+                    showDialog(context: context, 
+                          builder: (_) => CustomPopup(
+                              title: textShowDialogTitleAddContactProfile,
+                              message: textShowDialogBodyAddContactProfile,
+                              buttonAccept: BounceButton(
+                                buttonSize: ButtonSize.small,
+                                type: ButtonType.primary,
+                                label: textButtonResponseShowDialog,
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                        );    
                   },
                 ),
               ),              
