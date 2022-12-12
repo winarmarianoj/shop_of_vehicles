@@ -99,7 +99,7 @@ class SearchVehicles extends StatelessWidget{
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: CircleAvatar(
-                          child: Icon(Icons.person),
+                          child: Icon(Icons.mobile_friendly),
                         ),
                       ),
                       Column(

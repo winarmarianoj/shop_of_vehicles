@@ -32,7 +32,7 @@ class ItemCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: defaultPaddingTextObjectsHome, horizontal: kDefaultPaddin),
-              child: MyTextItemCardHome(
+              child: MyBodyLargeText(
                 text: vehicle.marca + " " + vehicle.modelo + " " + vehicle.anio,
                 color: themeDrawerText,
                 fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class ItemCard extends StatelessWidget {
             const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: defaultPaddingTextObjectsHome, horizontal: kDefaultPaddin),
-              child: MyTextItemCardHome(
+              child: MyBodyLargeText(
                 text: "\$${vehicle.price}",
                 color: themeDrawerText,
                 fontWeight: FontWeight.bold,

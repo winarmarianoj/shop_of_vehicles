@@ -39,11 +39,11 @@ class MyProfileText extends StatelessWidget {
   }
 }
 
-class MyTitleOrangeText extends StatelessWidget {
+class MyHeadline5Text extends StatelessWidget {
   final String text;
   final Color? color;
   final FontWeight? fontWeight;
-  const MyTitleOrangeText({Key? key, 
+  const MyHeadline5Text({Key? key, 
   required this.text,
   this.color, this.fontWeight}) : super(key: key);
 
@@ -57,13 +57,13 @@ class MyTitleOrangeText extends StatelessWidget {
   }
 }
 
-class MyDescriptionOrangeText extends StatelessWidget {
+class MyBodyMediumText extends StatelessWidget {
   final String text;
-  final Color? color;
-  final FontWeight? fontWeight;
-  const MyDescriptionOrangeText({Key? key, 
+  final Color color;
+  final FontWeight fontWeight;
+  const MyBodyMediumText({Key? key, 
   required this.text,
-  this.color, this.fontWeight}) : super(key: key);
+  required this.color, required this.fontWeight}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +75,11 @@ class MyDescriptionOrangeText extends StatelessWidget {
   }
 }
 
-class MyPriceYellowText extends StatelessWidget {
+class MyTitleMediumText extends StatelessWidget {
   final String text;
   final Color? color;
   final FontWeight? fontWeight;
-  const MyPriceYellowText({Key? key, 
+  const MyTitleMediumText({Key? key, 
   required this.text,
   this.color, this.fontWeight}) : super(key: key);
 
@@ -93,11 +93,11 @@ class MyPriceYellowText extends StatelessWidget {
   }
 }
 
-class MyTextItemCardHome extends StatelessWidget {
+class MyBodyLargeText extends StatelessWidget {
   final String text;
   final Color? color;
   final FontWeight? fontWeight;
-  const MyTextItemCardHome({Key? key, 
+  const MyBodyLargeText({Key? key, 
   required this.text,
   this.color, this.fontWeight}) : super(key: key);
 

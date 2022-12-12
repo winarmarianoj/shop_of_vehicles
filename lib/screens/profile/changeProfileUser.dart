@@ -14,14 +14,14 @@ class ChangeProfileUser extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: MyText(text: textTitleShopOfCars, color: kTextColor,),
+        title: Text(textTitleChangeProfile, ),
       ),
       body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [            
+        children: [
             BounceButton(
               buttonSize: ButtonSize.small, 
               type: ButtonType.secondary, 

@@ -40,7 +40,7 @@ const textTypeVehiclesWebSite = "Autos - Camionetas - Camiones";
 const textContactTitle = "Contacto: ";
 const textContactPhone = "119876543 - 1123459877";
 const textContactEmail = "shopofvehicles@algunlugar.com.ar";
-const textInitialsWebSiteName = 'SV';
+const textInitialsWebSiteName = 'SoV';
 const textDarkModeTheme = 'Dark Mode';
 const textCustomModeTheme = 'Custom Theme';
 const textLogout = 'Logout';
@@ -89,6 +89,7 @@ const textInitialRouteApp = 'login';
 const textTitleShopOfVans = "Shop of Vans";
 const textTitleShopOfCars = "Shop of Cars";
 const textTitleShopOfTrucks = "Shop of Trucks";
+const textTitleChangeProfile = 'Opciones de Cambio';
 
 //TODO tooltip
 const textToolTipTruck = 'Home Trucks';

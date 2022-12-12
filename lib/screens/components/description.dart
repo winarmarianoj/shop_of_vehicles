@@ -41,7 +41,7 @@ class Description extends StatelessWidget {
           const SizedBox(height: kDefaultPaddin/2),  
           Padding(
               padding: const EdgeInsets.fromLTRB(75.0, 10.0, 10.0, 10.0),
-              child: MyTitleOrangeText(
+              child: MyHeadline5Text(
                 text: "${vehicle.marca} ${vehicle.modelo} ${vehicle.anio}",
                 color: kTitle,
                 fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class Description extends StatelessWidget {
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),          
           Padding(
               padding: const EdgeInsets.fromLTRB(25.0, 10.0, 10.0, 10.0),
-              child: MyDescriptionOrangeText(
+              child: MyBodyMediumText(
                 text: vehicle.description,
                 color: kDescription,
                 fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class Description extends StatelessWidget {
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),
           Padding(
               padding: const EdgeInsets.fromLTRB(75.0, 10.0, 10.0, 10.0),
-              child: MyPriceYellowText(
+              child: MyTitleMediumText(
                   text: textLabelDescriptionVehicles + "\$" + vehicle.price.toString(),
                   color: kTextItemCardPrice,
                   fontWeight: FontWeight.normal,
