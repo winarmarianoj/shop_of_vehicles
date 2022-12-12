@@ -29,7 +29,7 @@ class HomeTruck extends StatelessWidget{
         tooltip: 'Vuelve atrás',
         onPressed: () {},
       ),*/
-      title: MyText(text: textTitleShopOfCars, color: kTextColor,),
+      title: MyText(text: textTitleShopOfTrucks, color: kTextColor,),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.airport_shuttle),

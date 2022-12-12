@@ -49,7 +49,7 @@ class Description extends StatelessWidget {
           ),
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),          
           Padding(
-              padding: const EdgeInsets.fromLTRB(15.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 10.0, 10.0, 10.0),
               child: MyDescriptionOrangeText(
                 text: vehicle.description,
                 color: kDescription,

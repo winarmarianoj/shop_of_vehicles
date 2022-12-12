@@ -1,11 +1,12 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 
 class MyText extends StatelessWidget {
   final String text;
   final Color? color;
-  final int? size;
-  const MyText({Key? key, required this.text,this.color,this.size}) : super(key: key);
+  const MyText({Key? key, required this.text,this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,24 @@ class MyText extends StatelessWidget {
         color: kTextColor,
         fontSize: 16,
         fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+}
+
+class MyProfileText extends StatelessWidget {
+  final String text;
+  final Color? color;
+  const MyProfileText({Key? key, required this.text,this.color}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+     text,
+      style: const TextStyle(
+        color: kTextColor,
+        fontSize: 18,
+        fontWeight: FontWeight.normal,
       ),
     );
   }

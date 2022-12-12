@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
             title: textTitleWebSite,
             initialRoute: textInitialRouteApp,
             home: LoginScreen(),
-            theme: appTheme.darkTheme ? themeDarkTwo : themeLightTwo, 
-            //theme: appTheme.darkTheme ? themeDarkOne : themeLightOne, 
+            //theme: appTheme.darkTheme ? themeDarkTwo : themeLightTwo, 
+            theme: appTheme.darkTheme ? themeDarkOne : themeLightOne, 
           );
         }
       ),      

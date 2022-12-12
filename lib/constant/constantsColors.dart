@@ -66,3 +66,7 @@ const buttonChangeProfile = Colors.blueGrey;
 const textButtonInputText = Colors.white;
 const buttonInputText = Colors.green;
 
+//TODO BounceButton
+const themeButtonIconsDarkMode = Colors.white;
+const themeButtonIconsCustomMode = Colors.black;
+

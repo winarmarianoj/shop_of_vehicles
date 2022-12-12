@@ -29,7 +29,7 @@ class HomeVan extends StatelessWidget{
         tooltip: 'Vuelve atrás',
         onPressed: () {},
       ),*/
-      title: MyText(text: textTitleShopOfCars, color: kTextColor,),
+      title: MyText(text: textTitleShopOfVans, color: kTextColor,),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.directions_car),

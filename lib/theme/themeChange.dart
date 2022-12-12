@@ -39,7 +39,7 @@ class ThemeChanger with ChangeNotifier {
       default:
         _darkTheme = false;
         _darkTheme = false;
-        _currentTheme = themeDarkThree;
+        _currentTheme = themeDarkTwo;
     }
   }
 
