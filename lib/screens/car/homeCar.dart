@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
-import 'package:shop_of_vehicles/screens/car/components/bodyCars.dart';
-import 'package:shop_of_vehicles/screens/search/searchCar.dart';
+import 'package:shop_of_vehicles/screens/components/body.dart';
+import 'package:shop_of_vehicles/screens/search/search.dart';
 import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 import 'package:shop_of_vehicles/screens/van/homeVan.dart';
+import 'package:shop_of_vehicles/widgets/text/myText.dart';
 
 class HomeCar extends StatelessWidget{
   const HomeCar({Key? key, }) : super(key: key);
@@ -14,7 +16,7 @@ class HomeCar extends StatelessWidget{
     return Scaffold(
       appBar: buildAppBar(context),
       drawer: HomeDrawer(),
-      body: const BodyCars(),
+      body: const Body(typeVehicle: "car",),
     );
   }
 
@@ -27,10 +29,11 @@ class HomeCar extends StatelessWidget{
         tooltip: 'Vuelve atrás',
         onPressed: () {},
       ),*/
+      title: MyText(text: textTitleShopOfCars, color: kTextColor,),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.airport_shuttle),
-          tooltip: 'Home Vans',
+          tooltip: textToolTipVan,
           //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
@@ -43,7 +46,7 @@ class HomeCar extends StatelessWidget{
         ),
         IconButton(
           icon: const Icon(Icons.local_shipping),
-          tooltip: 'Home Trucks',
+          tooltip: textToolTipTruck,
           //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
@@ -58,11 +61,12 @@ class HomeCar extends StatelessWidget{
         IconButton(
           icon: const Icon(Icons.search),
           //color: colorIconAppBar,
+          tooltip: textToolTipSearch,
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SearchCar(),
+                builder: (context) => Search(typeVehicle: "car",),
               ),
             );
           },

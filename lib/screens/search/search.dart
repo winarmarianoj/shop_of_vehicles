@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
-import 'package:shop_of_vehicles/models/Van.dart';
+import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
-import 'package:shop_of_vehicles/screens/van/homeVan.dart';
+import 'package:shop_of_vehicles/utils/getLists.dart';
 
-class SearchVan extends StatefulWidget{
-  const SearchVan({Key? key,}) : super(key: key);
+class Search extends StatefulWidget{
+  final String typeVehicle;
+  const Search({Key? key, required this.typeVehicle}) : super(key: key);
 
   @override
-  State<SearchVan> createState() => FirstSearch();
+  State<Search> createState() => FirstSearch(typeVehicle);
 }
 
-class FirstSearch extends State<SearchVan>{
+class FirstSearch extends State<Search>{
   TextEditingController searchController = TextEditingController();
+  String typeVehicle;
+
+  FirstSearch(this.typeVehicle);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {    
     return Scaffold(
       appBar: buildAppBar(context),
       drawer: HomeDrawer(),
@@ -30,10 +34,10 @@ class FirstSearch extends State<SearchVan>{
                 onChanged: (value) {
                   setState(() {});
                 },
-                decoration: InputDecoration(hintText: textDecorationHintTextSearch),
+                decoration: const InputDecoration(hintText: textDecorationHintTextSearch),
               ),
               Expanded(
-                child: SearchVehicles(text: searchController.text,),
+                child: SearchVehicles(text: searchController.text, typeVehicle: typeVehicle,),
               )
             ],
           ),
@@ -50,14 +54,7 @@ class FirstSearch extends State<SearchVan>{
         IconButton(
           icon: const Icon(Icons.arrow_back),
           tooltip: 'Vuelve atrás',
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomeVan(),
-              ),
-            );
-          },
+          onPressed: () {Navigator.pop(context);},
         ),        
       ],
     );
@@ -66,35 +63,32 @@ class FirstSearch extends State<SearchVan>{
 
 class SearchVehicles extends StatelessWidget{
   final String text;
-  SearchVehicles({Key? key, required this.text}) : super(key: key);
+  final String typeVehicle;
+  const SearchVehicles({Key? key, required this.text, required this.typeVehicle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
+    List<Vehicle> vehicles = GetLists.getListTypeVehicles(typeVehicle);
     return FutureBuilder(
-      initialData: vans,
+      initialData: vehicles,
       builder: ((context, snapshot) {
-        List<Van> vanList = [];
+        List<Vehicle> vehiclesList = [];
         if(text.isNotEmpty){
-          vanList = vans.where((element) => 
+          vehiclesList = vehicles.where((element) => 
                   element.marca.contains(text) ||
                   element.modelo.contains(text) ||
                   element.anio.contains(text))
                   .toList();
         }
         return ListView.builder(
-          itemCount: vanList.length,
+          itemCount: vehiclesList.length,
           itemBuilder: (context, index) {
-            var van = vanList[index];
+            var vehicle = vehiclesList[index];
             return TextButton(
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => DetailsScreen(
-                    id: vanList[index].id,
-                    marca: vanList[index].marca,
-                    modelo: vanList[index].modelo,
-                  ),
+                    builder: (context) => DetailsScreen(vehicle: vehicle,),
                 ),
               ),
               child: Card(
@@ -112,9 +106,9 @@ class SearchVehicles extends StatelessWidget{
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            van.marca + " " + van.modelo + " " + van.anio,
+                            vehicle.marca + " " + vehicle.modelo + " " + vehicle.anio,
                           ),
-                          Text(van.price.toString()),
+                          Text(vehicle.price.toString()),
                         ],
                       )
                     ],

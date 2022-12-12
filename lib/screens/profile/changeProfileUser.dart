@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/screens/profile/input/inputText.dart';
+import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
+import 'package:shop_of_vehicles/widgets/text/myText.dart';
 
 class ChangeProfileUser extends StatelessWidget {
   @override
@@ -11,50 +14,95 @@ class ChangeProfileUser extends StatelessWidget {
     
     return Scaffold(
       appBar: AppBar(
-        title: Text('Change Profile User'),
+        title: MyText(text: textTitleShopOfCars, color: kTextColor,),
       ),
       body: Center(
-          child: Column(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          MaterialButton(            
-              child: Text('Cambiar Nombre', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {                
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "name",))));
-              }),
-          MaterialButton(
-              child: Text('Cambiar Apellido', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "lastName"))));
-              }),
-              MaterialButton(
-              child: Text('Cambiar Teléfono', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: 'phone'))));
-              }),
-              MaterialButton(
-              child: Text('Cambiar Email', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: 'email'))));
-              }),
-              MaterialButton(
-              child: Text('Cambiar Password', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: 'password'))));
-              }),
-              MaterialButton(
-              child: Text('Cambiar Dirección', style: TextStyle(color: textLabelChangeProfile)),
-              color: buttonChangeProfile,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: 'street'))));
-              }),
+        children: [            
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangeName,
+              iconLeft: Icons.person,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Nombre",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangeLastName,
+              iconLeft: Icons.person,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Apellido",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangePhone,
+              iconLeft: Icons.phone,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Telefono",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangeEmail,
+              iconLeft: Icons.email,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Email",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangePassword,
+              iconLeft: Icons.password,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Password",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
+            BounceButton(
+              buttonSize: ButtonSize.small, 
+              type: ButtonType.secondary, 
+              label: textButtonChangeStreet,
+              iconLeft: Icons.home_work,
+              textColor: buttonChangeProfile,
+              horizontalPadding: true,
+              contentBasedWidth: true,
+              onPressed:() {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => InputText(attribute: "Direccion",))));
+              },
+            ),                        
+            const SizedBox(height: kDefaultPaddin), 
         ],
-      )),
+      ),
+          )),
     );
   }
 

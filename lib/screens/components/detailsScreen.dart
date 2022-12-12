@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/detailsBody.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final int id;
-  final String marca;
-  final String modelo;
-  const DetailsScreen({Key? key, required this.id, required this.marca, required this.modelo}) : super(key: key);
+  final Vehicle vehicle;
+  const DetailsScreen({Key? key, required this.vehicle}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
       drawer: HomeDrawer(),
-      body: DetailsBody(id: id, marca: marca, modelo: modelo,),
+      body: DetailsBody(vehicle: vehicle,),
     );
   }
 

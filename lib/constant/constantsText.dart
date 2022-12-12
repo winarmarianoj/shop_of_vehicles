@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-const kDefaultPaddin = 20.0;
+const kDefaultPaddin = 10.0;
 const defaultPaddingTextObjectsHome = 4.0;
-const defaultPaddingImageObjectsHome = 2.0;
+const defaultPaddingImageObjectsHome = 0.5;
 const defaultPaddingHome = 0.9;
+const defaultSpaceBetweenObjectsDescription = 7.0;
 
 //TODO Description vehicles
-const textLabelDescriptionVehicles = "Precio en Dolares\n";
+const textLabelDescriptionVehicles = "Precio en Dolares : ";
+const textLabelButton = 'Agregar a Contactos';
 const textShowDialogTitleAddContactProfile = "Contacto del Propietario";
 const textShowDialogBodyAddContactProfile = "Ya se ha agregado el contacto a su perfil de Contactos.";
 const textButtonResponseShowDialog = "OK";
@@ -15,6 +17,17 @@ const textButtonResponseShowDialog = "OK";
 const textTitleProfile = 'Profile User';
 const textNoDataUserInitial = 'No hay información del usuario';
 const textUnknownState = 'Estado no reconocido';
+const textChangeProfileTitle = 'Change Profile User';
+const textButtonChangeName = 'Cambiar Nombre';
+const textButtonChangeLastName = 'Cambiar Apellido';
+const textButtonChangePhone = 'Cambiar Teléfono';
+const textButtonChangeEmail = 'Cambiar Email';
+const textButtonChangePassword = 'Cambiar Password';
+const textButtonChangeStreet = 'Cambiar Dirección';
+const textWriterNewChangeByVariable = 'Escriba su nuevo ';
+const textSendDataButton = 'Enviar Cambios';
+const textTitleResultChangeNotExists = 'Resultado de su solicitud: ';
+const textTypeChangeNotExists = 'No existe lo solicitado';
 
 //TODO Search
 const textDecorationHintTextSearch = "Buscar...";
@@ -42,7 +55,7 @@ const textInvalidData = 'El valor ingresado no es un correo valido';
 const textRegexPatternEmail = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 const textFormatPassword = '*****';
 const textLabelTitlePassword = 'Contraseña';
-const textInvalidDataPassword = 'La contraseña debe de ser de 6 caracteres';
+const textInvalidDataPassword = 'La contraseña debe de ser mayor o igual a 7 caracteres';
 const textResultErrorLoginTitle = 'Resultado del Login';
 const textResultInvalidDataLogin = 'Error en el proceso de login. Incorrecto password o su usuario no existe.';
 const textButtonShowDialogLogin = 'OK';
@@ -71,3 +84,18 @@ const textWelcomeTitleAnimation = "Bienvenido!!!";
 //TODO Main
 const textTitleWebSite = 'Shop of Vehicles';
 const textInitialRouteApp = 'login';
+
+//TODO Title AppBar
+const textTitleShopOfVans = "Shop of Vans";
+const textTitleShopOfCars = "Shop of Cars";
+const textTitleShopOfTrucks = "Shop of Trucks";
+
+//TODO tooltip
+const textToolTipTruck = 'Home Trucks';
+const textToolTipCar = 'Home Cars';
+const textToolTipVan = 'Home Vans';
+const textToolTipLogout = 'Desloguearse';
+const textToolTipSearch = 'Buscador';
+
+//TODO Buttons
+

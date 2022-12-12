@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/providers/registerFormProvider.dart';
-import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
-import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
-import 'package:shop_of_vehicles/screens/ui/login/widgets/card_container.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_of_vehicles/screens/ui/register/decorations/registerDecorations.dart';
+import 'package:shop_of_vehicles/widgets/ui/auth_background.dart';
+import 'package:shop_of_vehicles/widgets/ui/card_container.dart';
+import 'package:shop_of_vehicles/widgets/ui/inputDecorations.dart';
 import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
 import 'package:shop_of_vehicles/service/authenticationService.dart';
-import 'package:shop_of_vehicles/utils/bounceButton.dart';
-import 'package:shop_of_vehicles/utils/customPopup.dart';
+import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
+import 'package:shop_of_vehicles/widgets/message/customPopup.dart';
 
 class RegisterScreen extends StatelessWidget {
   @override
@@ -56,7 +55,7 @@ class RegisterForm extends StatelessWidget {
             TextFormField(           
               autocorrect: false,
               keyboardType: TextInputType.text,
-              decoration: RegisterDecorations.registerDecoration(
+              decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextNameRegister,
                   labelText: textLabelNameRegister,
                   prefixIcon: Icons.title),
@@ -73,7 +72,7 @@ class RegisterForm extends StatelessWidget {
             TextFormField(           
               autocorrect: false,
               keyboardType: TextInputType.text,
-              decoration: RegisterDecorations.registerDecoration(
+              decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextLastNameRegister,
                   labelText: textLabelLastNameRegister,
                   prefixIcon: Icons.title),
@@ -90,7 +89,7 @@ class RegisterForm extends StatelessWidget {
             TextFormField(           
               autocorrect: false,
               keyboardType: TextInputType.text,
-              decoration: RegisterDecorations.registerDecoration(
+              decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextPhoneRegister,
                   labelText: textLabelPhoneRegister,
                   prefixIcon: Icons.phone),
@@ -134,7 +133,7 @@ class RegisterForm extends StatelessWidget {
             TextFormField(           
               autocorrect: false,
               keyboardType: TextInputType.text,
-              decoration: RegisterDecorations.registerDecoration(
+              decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextStreetRegister,
                   labelText: textLabelStreetRegister,
                   prefixIcon: Icons.home_max),

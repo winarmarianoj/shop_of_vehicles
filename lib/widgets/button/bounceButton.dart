@@ -44,6 +44,9 @@ class BounceButton extends StatefulWidget {
   final IconData? iconLeft;
   final String label;
   final Color textColor;
+  final Border? border;
+  final Color? disabledBorderColor;
+  final Color? borderColor;
   //TODO make default true, review implementations
   final bool contentBasedWidth;
   final bool horizontalPadding;
@@ -56,6 +59,9 @@ class BounceButton extends StatefulWidget {
     this.textColor = Colors.black,
     this.contentBasedWidth = false,
     this.horizontalPadding = true,
+    this.border,
+    this.disabledBorderColor,
+    this.borderColor,
     required this.buttonSize,
     required this.type,
     required this.label,
@@ -151,21 +157,22 @@ class _BounceButtonState extends State<BounceButton>
   @override
   Widget build(BuildContext context) {
     final disabled = widget.onPressed == null;
+    
     return AbsorbPointer(
-      absorbing: disabled,
-      child: GestureDetector(
-        onTapUp: _tapUp,
-        onTapDown: _tapDown,
-        onTapCancel: _tapCancel,
-        onTap: widget.onPressed,
-        child: ScaleTransition(
-          scale: _bounceAnimation,
-          child: AnimatedBuilder(
-            animation: _colorAnimation,
-            builder: (_, child) => _buildBtn()!,
+        absorbing: disabled,
+        child: GestureDetector(
+          onTapUp: _tapUp,
+          onTapDown: _tapDown,
+          onTapCancel: _tapCancel,
+          onTap: widget.onPressed,
+          child: ScaleTransition(
+            scale: _bounceAnimation,
+            child: AnimatedBuilder(
+              animation: _colorAnimation,
+              builder: (_, child) => _buildBtn()!,
+            ),
           ),
-        ),
-      ),
+        ),      
     );
   }
 
@@ -290,6 +297,7 @@ class BaseButton extends StatelessWidget {
           colorIcon: txtColor,
           iconSize: iconSize,
         ),
+
       ),
     );
   }

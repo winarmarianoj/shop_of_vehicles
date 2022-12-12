@@ -12,10 +12,11 @@ class ProfileUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(textTitleProfile),
+        title: const Text(textTitleProfile),
         actions: [          
           IconButton(
             icon: const Icon(Icons.local_shipping),
+            tooltip: textToolTipTruck,
             onPressed: () {
               Navigator.push(
                 context,
@@ -26,7 +27,8 @@ class ProfileUser extends StatelessWidget {
             }, 
           ),
           IconButton(
-            icon: Icon( Icons.logout), 
+            icon: const Icon( Icons.logout),
+            tooltip: textToolTipLogout,
             onPressed: () {
               context.read<UserCubit>().logout();
             },            
@@ -37,7 +39,7 @@ class ProfileUser extends StatelessWidget {
           child: BodyScaffold(),
         ),  
       floatingActionButton: FloatingActionButton(
-        child: Icon( Icons.accessibility_new ),
+        child: const Icon( Icons.accessibility_new ),
         onPressed: () => Navigator.push(context, MaterialPageRoute(builder: ((context) => ChangeProfileUser())))
       ),
    );

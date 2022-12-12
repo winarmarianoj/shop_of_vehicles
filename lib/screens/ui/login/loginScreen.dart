@@ -3,16 +3,15 @@ import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/providers/loginFormProvider.dart';
-import 'package:shop_of_vehicles/screens/ui/login/decorations/input_decorations.dart';
-import 'package:shop_of_vehicles/screens/ui/login/widgets/auth_background.dart';
-import 'package:shop_of_vehicles/screens/ui/login/widgets/card_container.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/screens/ui/register/registerScreen.dart';
+import 'package:shop_of_vehicles/widgets/ui/auth_background.dart';
+import 'package:shop_of_vehicles/widgets/ui/card_container.dart';
+import 'package:shop_of_vehicles/widgets/ui/inputDecorations.dart';
 import 'package:shop_of_vehicles/screens/welcome/headerPage.dart';
 import 'package:shop_of_vehicles/service/authenticationService.dart';
-
-import '../../../utils/bounceButton.dart';
-import '../../../utils/customPopup.dart';
+import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
+import 'package:shop_of_vehicles/widgets/message/customPopup.dart';
 
 class LoginScreen extends StatelessWidget {
   @override

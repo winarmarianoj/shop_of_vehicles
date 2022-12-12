@@ -8,14 +8,14 @@ class LinkButton extends StatelessWidget {
   final IconData? iconLeft;
   final Color? color;
   final TextAlign? labelAlign;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final MainAxisSize? mainAxisSize;
   final MainAxisAlignment? mainAxisAlignment;
 
   const LinkButton({
     Key? key,
     required this.label,
-    required this.onPressed,
+    this.onPressed,
     this.iconRight,
     this.iconLeft,
     this.labelStyle,

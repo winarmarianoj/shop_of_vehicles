@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
+import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/description.dart';
 
 class DetailsBody extends StatelessWidget {
-  final int id;
-  final String marca;
-  final String modelo;
-  const DetailsBody({Key? key, required this.id, required this.marca, required this.modelo}) : super(key: key);
+  final Vehicle vehicle;
+  const DetailsBody({Key? key, required this.vehicle}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -44,8 +43,7 @@ class DetailsBody extends StatelessWidget {
                   ),
                   child: Column(
                     children: <Widget>[    
-                      Description(id: id, marca: marca, modelo: modelo,),
-                      const SizedBox(height: kDefaultPaddin / 2),                      
+                      Description(vehicle: vehicle,),                   
                     ],
                   ),                  
                 ),

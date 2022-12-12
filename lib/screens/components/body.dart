@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shop_of_vehicles/constant/constantsText.dart';
-import 'package:shop_of_vehicles/models/Van.dart';
+import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
 import 'package:shop_of_vehicles/screens/components/itemCard.dart';
+import 'package:shop_of_vehicles/utils/getLists.dart';
 
-class BodyVans extends StatelessWidget{
-  const BodyVans({Key? key}) : super(key: key);
+class Body extends StatelessWidget{
+  final String typeVehicle;
+  const Body({Key? key, required this.typeVehicle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    List<Vehicle> vehicles = GetLists.getListTypeVehicles(typeVehicle);
+    
     return Stack(
       children: [
         Image.asset(
@@ -24,7 +28,7 @@ class BodyVans extends StatelessWidget{
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 1),
                 child: GridView.builder(
-                  itemCount: vans.length,
+                  itemCount: vehicles.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: defaultPaddingHome,
@@ -32,16 +36,12 @@ class BodyVans extends StatelessWidget{
                     childAspectRatio: 0.75,
                   ),
                   itemBuilder: (context, index) => ItemCard(
-                    id: vans[index].id,
-                    marca: vans[index].marca,
-                    modelo: vans[index].modelo,
+                    vehicle: vehicles[index],
                     press: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                          id: vans[index].id,
-                          marca: vans[index].marca,
-                          modelo: vans[index].modelo,
+                          vehicle: vehicles[index],
                         ),
                       ),
                     ),
@@ -55,3 +55,4 @@ class BodyVans extends StatelessWidget{
     ); 
   }
 }
+

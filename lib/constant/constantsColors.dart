@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-const kTextColor = Color(0xFF535353);
+const kTextColor = Color.fromARGB(255, 19, 18, 18);
 const kTextLightColor = Color(0xFFACACAC);
 const kTextItemCardTitle = Color.fromARGB(255, 13, 165, 7);
-const kTextItemCardPrice = Color(0xFFF9DC07);
+const kTextItemCardPrice = Color.fromARGB(255, 176, 241, 176);
 const kFondo = Color.fromARGB(255, 10, 29, 104);
 const kTitle = Color(0xFFFA8A04);
+const kDescription = Color.fromARGB(255, 248, 222, 137);
 
 const colorIconAppBar = Colors.white;
 const appBarBackground = Color.fromARGB(255, 15, 157, 228);

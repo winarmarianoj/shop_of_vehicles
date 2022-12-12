@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
-import 'package:shop_of_vehicles/utils/bounceButton.dart';
-import 'package:shop_of_vehicles/utils/linkButton.dart';
+import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
+import 'package:shop_of_vehicles/widgets/button/linkButton.dart';
 
 const _translationPath = 'close_form_popup.';
 

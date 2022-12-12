@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_of_vehicles/constant/constantsColors.dart';
+import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/screens/profile/profileUser.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
+import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
+import 'package:shop_of_vehicles/widgets/message/customPopup.dart';
 
 class InputText extends StatelessWidget { 
   final String attribute;
@@ -23,7 +26,7 @@ class InputText extends StatelessWidget {
               children: [
                 const SizedBox(height: 10),
                 Text(
-                  'Escriba su nuevo ' + attribute + " :",
+                  textWriterNewChangeByVariable + attribute + " :",
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 Form(                      
@@ -34,20 +37,21 @@ class InputText extends StatelessWidget {
                       children: [                      
                         TextField(
                           keyboardType: TextInputType.text,
-                          onChanged: (value) {
-                            changeNewAttribute(attribute, value, context);
-                          }
-                        ),                          
+                          onChanged: (value) {changeNewAttribute(attribute, value, context);}
+                        ), 
                         const SizedBox(height: 30),
-                        MaterialButton(
-                            child: Text(
-                              'Send Data',
-                              style: TextStyle(color: textButtonInputText),
-                            ),
-                            color: buttonInputText,
-                            onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: ((context) => ProfileUser())));
-                            }),   
+                        BounceButton(
+                          buttonSize: ButtonSize.small, 
+                          type: ButtonType.primary, 
+                          label: textSendDataButton,
+                          iconLeft: Icons.send,
+                          textColor: buttonInputText,
+                          horizontalPadding: true,
+                          contentBasedWidth: true,
+                          onPressed:() {
+                            Navigator.push(context, MaterialPageRoute(builder: ((context) => ProfileUser())));
+                          },
+                        ),               
                       ],
                     ),
                   ),
@@ -85,26 +89,40 @@ class InputText extends StatelessWidget {
 
 void changeNewAttribute(String attribute, String newAttribute, BuildContext context){
   switch(attribute){
-    case 'name':
+    case 'Nombre':
       context.read<UserCubit>().changeName(newAttribute);
       break;
-      case 'lastName':
+      case 'Apellido':
       context.read<UserCubit>().changeLastName(newAttribute);
       break;
-      case 'phone':
+      case 'Telefono':
       context.read<UserCubit>().changePhone(newAttribute);
       break;
-      case 'email': 
+      case 'Email': 
       context.read<UserCubit>().changeEmail(newAttribute);
       break;
-      case 'password': 
+      case 'Password': 
       context.read<UserCubit>().changePassword(newAttribute);
       break;
-      case 'street': 
+      case 'Direccion': 
       context.read<UserCubit>().changeStreet(newAttribute);
       break;
     default:
-      'No existe lo solicitado';
+      print(textTypeChangeNotExists);
+      showDialog(context: context, 
+        builder: (_) => CustomPopup(
+            title: textTitleResultChangeNotExists,
+            message: textTypeChangeNotExists,
+            buttonAccept: BounceButton(
+              buttonSize: ButtonSize.small,
+              type: ButtonType.primary,
+              label: textButtonShowDialogLogin,
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          )
+      ); 
       break;
   }
 
