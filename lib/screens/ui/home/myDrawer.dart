@@ -51,9 +51,9 @@ class BodyDrawer extends StatelessWidget{
         child: Column(
         children: [
           DrawerHeader(
-            //padding: const EdgeInsets.fromLTRB(5.0, 5.0, 2.0, 1.0),
+            padding: const EdgeInsets.fromLTRB(20.0, 25.0, 15.0, 15.0),
             duration: transitionDuration,
-            decoration: colorsShopOfVehicles(),
+            //decoration: colorsShopOfVehicles(),
             child: Column(
               children: [ 
                 MyBodyMediumText(

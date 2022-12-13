@@ -57,7 +57,8 @@ const neutral3Color = Colors.amberAccent;
 //TODO DRAWER
 const themeDrawerGradiantOne = Color.fromARGB(255, 79, 156, 63);
 const themeDrawerGradiantTwo = Color.fromRGBO(90, 70, 178, 1);
-const themeDrawerBackground = Color.fromARGB(255, 88, 2, 2);
+//const themeDrawerBackground = Color.fromARGB(255, 88, 2, 2);
+const themeDrawerBackground = Color.fromRGBO(240, 183, 109, 1);
 const themeDrawerText = Colors.green;
 
 //TODO PROFILES

@@ -4,6 +4,7 @@ import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 import 'package:shop_of_vehicles/utils/getLists.dart';
+import 'package:shop_of_vehicles/widgets/text/myText.dart';
 
 class Search extends StatefulWidget{
   final String typeVehicle;
@@ -50,7 +51,8 @@ class FirstSearch extends State<Search>{
     return AppBar(
       //backgroundColor: appBarBackground,
       elevation: 0,
-      actions: <Widget>[
+      title: Text(textTitleSearching, ),
+      actions: <Widget>[        
         IconButton(
           icon: const Icon(Icons.arrow_back),
           tooltip: 'Vuelve atrás',

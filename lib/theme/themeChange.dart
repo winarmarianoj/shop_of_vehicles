@@ -20,7 +20,7 @@ class ThemeChanger with ChangeNotifier {
       case 1: // light
         _darkTheme   = false;
         _customTheme = true;
-        _currentTheme = ThemeData.light();
+        _currentTheme = themeLightTwo;// ThemeData.light();
       break;
 
       case 2: // Dark
@@ -28,13 +28,13 @@ class ThemeChanger with ChangeNotifier {
         _customTheme = false;
         _currentTheme = ThemeData.dark().copyWith(
           accentColor: Colors.pink
-        );
+        ); 
       break;
 
-      /* case 3: // Dark
+      case 3: // Dark
         _darkTheme   = false;
         _customTheme = true;
-      break; */
+      break; 
 
       default:
         _darkTheme = false;
@@ -50,9 +50,9 @@ class ThemeChanger with ChangeNotifier {
     if ( value ) {
       _currentTheme = ThemeData.dark().copyWith(
           accentColor: Colors.pink
-      );
+      ); 
     } else {
-      _currentTheme = ThemeData.light();
+      _currentTheme = themeLightTwo; // ThemeData.light();
     }
 
     notifyListeners();
@@ -64,16 +64,16 @@ class ThemeChanger with ChangeNotifier {
 
     if ( value ) {
       _currentTheme = ThemeData.dark().copyWith(
-          accentColor: Color(0xff48A0EB),
+          accentColor: Color.fromARGB(255, 4, 97, 179),
           primaryColorLight: Colors.white,
           scaffoldBackgroundColor: Color(0xff16202B),
           textTheme: TextTheme(
             bodyText1: TextStyle( color: Colors.white )
           ),
           // textTheme.body1.color
-      );
+      ); 
     } else {
-      _currentTheme = ThemeData.light();
+      _currentTheme = themeDarkTwo; // ThemeData.light();
     }
 
     notifyListeners();

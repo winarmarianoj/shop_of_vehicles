@@ -40,7 +40,7 @@ class Description extends StatelessWidget {
           ), 
           const SizedBox(height: kDefaultPaddin/2),  
           Padding(
-              padding: const EdgeInsets.fromLTRB(75.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(65.0, 10.0, 10.0, 10.0),
               child: MyHeadline5Text(
                 text: "${vehicle.marca} ${vehicle.modelo} ${vehicle.anio}",
                 color: kTitle,
@@ -49,7 +49,7 @@ class Description extends StatelessWidget {
           ),
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),          
           Padding(
-              padding: const EdgeInsets.fromLTRB(25.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(35.0, 10.0, 10.0, 10.0),
               child: MyBodyMediumText(
                 text: vehicle.description,
                 color: kDescription,
@@ -58,7 +58,7 @@ class Description extends StatelessWidget {
           ),
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),
           Padding(
-              padding: const EdgeInsets.fromLTRB(75.0, 10.0, 10.0, 10.0),
+              padding: const EdgeInsets.fromLTRB(65.0, 10.0, 10.0, 10.0),
               child: MyTitleMediumText(
                   text: textLabelDescriptionVehicles + "\$" + vehicle.price.toString(),
                   color: kTextItemCardPrice,
@@ -67,7 +67,7 @@ class Description extends StatelessWidget {
           ),
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),                   
           Padding(
-            padding: const EdgeInsets.fromLTRB(75.0, 35.0, 10.0, 10.0),
+            padding: const EdgeInsets.fromLTRB(65.0, 35.0, 10.0, 10.0),
             child:  BounceButton(
               buttonSize: ButtonSize.small, 
               type: ButtonType.primary, 

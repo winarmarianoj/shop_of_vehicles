@@ -90,6 +90,7 @@ const textTitleShopOfVans = "Shop of Vans";
 const textTitleShopOfCars = "Shop of Cars";
 const textTitleShopOfTrucks = "Shop of Trucks";
 const textTitleChangeProfile = 'Opciones de Cambio';
+const textTitleSearching = 'Buscando letra que contenga....';
 
 //TODO tooltip
 const textToolTipTruck = 'Home Trucks';

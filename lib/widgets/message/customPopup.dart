@@ -64,12 +64,12 @@ class CustomPopup extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 20, bottom: 16),
                         child: Text(
                           title!,
-                          style: TextStyle(color: kTextColor, fontWeight: FontWeight.w900),
+                          style: TextStyle(fontWeight: FontWeight.w900),
                         ),
                       ),
                     Text(
                       message,
-                      style: TextStyle(color: kTextColor, fontWeight: FontWeight.w900),
+                      style: TextStyle(fontWeight: FontWeight.w900), //color: kTextColor, 
                       textAlign: TextAlign.left,
                     ),
                     Padding(
