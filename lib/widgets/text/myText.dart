@@ -49,6 +49,7 @@ class MyHeadline5Text extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme(headline5: TextStyle(color: color, fontWeight: fontWeight),);
     return Text(
       text,
       style:  Theme.of(context).textTheme.headline5
