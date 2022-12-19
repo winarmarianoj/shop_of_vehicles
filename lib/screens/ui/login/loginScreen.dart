@@ -120,10 +120,8 @@ class _LoginForm extends StatelessWidget {
                   ? null
                   : () {
                       FocusScope.of(context).unfocus();
-                      if (!loginForm.isValidForm()) return;                      
-                      //loginForm.isLoading = true;
+                      if (!loginForm.isValidForm()) return;
                       Future.delayed(Duration(seconds: 5));
-                      // TODO: validar si el login es correcto 
                       AuthenticationService service = AuthenticationService();
                       loginForm = service.getLoginUser(loginForm, context);
                       if(loginForm.isLoading) {

@@ -5,7 +5,6 @@ import 'package:shop_of_vehicles/constant/constantsText.dart';
 import 'package:shop_of_vehicles/cubit/userCubit.dart';
 import 'package:shop_of_vehicles/screens/profile/input/inputText.dart';
 import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
-import 'package:shop_of_vehicles/widgets/text/myText.dart';
 
 class ChangeProfileUser extends StatelessWidget {
   @override

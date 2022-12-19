@@ -88,7 +88,7 @@ class RegisterForm extends StatelessWidget {
             const SizedBox(height: 10),
             TextFormField(           
               autocorrect: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.phone,
               decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextPhoneRegister,
                   labelText: textLabelPhoneRegister,
@@ -99,7 +99,7 @@ class RegisterForm extends StatelessWidget {
                 RegExp regExp = new RegExp(pattern);
                 return (value != null && value.length <= 10)
                     ? null
-                    : textInvalidDataFormat;
+                    : textPhoneInvalidDataFormat;
               },
             ),
             const SizedBox(height: 10),
@@ -120,7 +120,7 @@ class RegisterForm extends StatelessWidget {
             TextFormField(
               autocorrect: false,
               obscureText: true,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.visiblePassword,
               decoration: InputDecorations.authInputDecoration(
                   hintText: textFormatPassword,
                   labelText: textLabelTitlePassword,
@@ -132,7 +132,7 @@ class RegisterForm extends StatelessWidget {
             const SizedBox(height: 10),
             TextFormField(           
               autocorrect: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.streetAddress,
               decoration: InputDecorations.authInputDecoration(
                   hintText: textHintTextStreetRegister,
                   labelText: textLabelStreetRegister,
@@ -165,7 +165,6 @@ class RegisterForm extends StatelessWidget {
                   : () {
                       FocusScope.of(context).unfocus();
                       if (!registerForm.isValidForm()) return;
-                      //registerForm.isLoading = true;
                       Future.delayed(Duration(seconds: 5));
                       AuthenticationService service = AuthenticationService();
                       registerForm = service.getRegisterUser(registerForm, context);

@@ -22,19 +22,12 @@ class HomeTruck extends StatelessWidget{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      //backgroundColor: appBarBackground,
       elevation: 0,
-      /*leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        tooltip: 'Vuelve atrás',
-        onPressed: () {},
-      ),*/
       title: MyText(text: textTitleShopOfTrucks, color: kTextColor,),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.airport_shuttle),
           tooltip: textToolTipVan,
-          //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
@@ -47,7 +40,6 @@ class HomeTruck extends StatelessWidget{
         IconButton(
           icon: const Icon(Icons.directions_car),
           tooltip: textToolTipCar,
-          //color: colorIconAppBar,
           onPressed: () {
             Navigator.push(
               context,
@@ -60,7 +52,6 @@ class HomeTruck extends StatelessWidget{
         const SizedBox(width: kDefaultPaddin / 2),        
         IconButton(
           icon: const Icon(Icons.search),
-          //color: colorIconAppBar,
           tooltip: textToolTipSearch,
           onPressed: () {
             Navigator.push(

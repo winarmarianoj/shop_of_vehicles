@@ -16,7 +16,7 @@ class DetailsBody extends StatelessWidget {
         Image.asset(
           "assets/image/texture.jpg",
           width: 600,
-          height: 700,
+          height: 800,
           fit: BoxFit.cover,
         ),
         SingleChildScrollView(

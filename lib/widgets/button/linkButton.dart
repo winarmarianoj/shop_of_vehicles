@@ -50,22 +50,17 @@ class LinkButton extends StatelessWidget {
           Flexible(
             child: Text(
               label,
-              /*style: labelStyle ??
-                  linkInline1.copyWith(
-                    color: finalColor,
-                  ),*/
                   style: TextStyle(color: themeLoginStateProccess),
               textAlign: labelAlign,
             ),
           ),
           if (iconRight != null)
             Row(
-              children: [
-                //horizontalSpace8,
+              children: [    
                 Icon(
                   iconRight,
                   color: finalColor,
-                  size: 20,// IconSize.lg,
+                  size: 20,
                 ),
               ],
             ),

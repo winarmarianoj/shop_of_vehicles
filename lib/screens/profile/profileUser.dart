@@ -8,7 +8,6 @@ import 'package:shop_of_vehicles/screens/truck/homeTruck.dart';
 import 'package:shop_of_vehicles/screens/ui/login/loginScreen.dart';
 
 class ProfileUser extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +53,6 @@ class ProfileUser extends StatelessWidget {
 }
 
 class BodyScaffold extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<UserCubit, UserState>(
@@ -72,9 +70,7 @@ class BodyScaffold extends StatelessWidget {
 }
 
 class InformacionUsuario extends StatelessWidget {
-
   final User user;
-
   const InformacionUsuario( this.user );
   @override
   Widget build(BuildContext context) {

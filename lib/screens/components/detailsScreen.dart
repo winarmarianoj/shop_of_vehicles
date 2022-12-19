@@ -19,7 +19,6 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      //backgroundColor: truck.color,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

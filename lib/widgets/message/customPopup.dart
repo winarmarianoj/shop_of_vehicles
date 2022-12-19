@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shop_of_vehicles/constant/constantsColors.dart';
 import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
 import 'package:shop_of_vehicles/widgets/button/linkButton.dart';
 
@@ -69,7 +68,7 @@ class CustomPopup extends StatelessWidget {
                       ),
                     Text(
                       message,
-                      style: TextStyle(fontWeight: FontWeight.w900), //color: kTextColor, 
+                      style: TextStyle(fontWeight: FontWeight.w900), 
                       textAlign: TextAlign.left,
                     ),
                     Padding(

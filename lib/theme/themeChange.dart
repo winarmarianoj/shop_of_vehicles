@@ -20,7 +20,7 @@ class ThemeChanger with ChangeNotifier {
       case 1: // light
         _darkTheme   = false;
         _customTheme = true;
-        _currentTheme = themeLightTwo;// ThemeData.light();
+        _currentTheme = themeLightTwo;
       break;
 
       case 2: // Dark
@@ -52,7 +52,7 @@ class ThemeChanger with ChangeNotifier {
           accentColor: Colors.pink
       ); 
     } else {
-      _currentTheme = themeLightTwo; // ThemeData.light();
+      _currentTheme = themeLightTwo; 
     }
 
     notifyListeners();
@@ -73,7 +73,7 @@ class ThemeChanger with ChangeNotifier {
           // textTheme.body1.color
       ); 
     } else {
-      _currentTheme = themeDarkTwo; // ThemeData.light();
+      _currentTheme = themeDarkTwo; 
     }
 
     notifyListeners();

@@ -24,7 +24,7 @@ class Description extends StatelessWidget {
           Container(            
             child: CarouselSlider.builder(               
               options: CarouselOptions(
-                height: 300,
+                height: 270,
                 autoPlay: true,
                 enlargeCenterPage: true,
                 //reverse: true,
@@ -67,7 +67,7 @@ class Description extends StatelessWidget {
           ),
           const SizedBox(height: defaultSpaceBetweenObjectsDescription),                   
           Padding(
-            padding: const EdgeInsets.fromLTRB(65.0, 35.0, 10.0, 10.0),
+            padding: const EdgeInsets.fromLTRB(60.0, 15.0, 10.0, 10.0),
             child:  BounceButton(
               buttonSize: ButtonSize.small, 
               type: ButtonType.primary, 

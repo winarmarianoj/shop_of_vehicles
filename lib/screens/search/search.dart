@@ -4,7 +4,6 @@ import 'package:shop_of_vehicles/models/Vehicle.dart';
 import 'package:shop_of_vehicles/screens/components/detailsScreen.dart';
 import 'package:shop_of_vehicles/screens/ui/home/myDrawer.dart';
 import 'package:shop_of_vehicles/utils/getLists.dart';
-import 'package:shop_of_vehicles/widgets/text/myText.dart';
 
 class Search extends StatefulWidget{
   final String typeVehicle;
@@ -49,7 +48,6 @@ class FirstSearch extends State<Search>{
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      //backgroundColor: appBarBackground,
       elevation: 0,
       title: Text(textTitleSearching, ),
       actions: <Widget>[        

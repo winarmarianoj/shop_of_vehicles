@@ -66,7 +66,6 @@ class InputText extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context){
     return AppBar(
-      //backgroundColor: appBarBackground,
       elevation: 0,
       actions: <Widget>[
         IconButton(

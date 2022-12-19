@@ -70,8 +70,14 @@ class MyBodyMediumText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.bodyMedium
-              ?.copyWith(color: color, fontWeight: fontWeight),
+      style: 
+      TextStyle(
+        fontFamily: "Arial",
+        fontSize: 14,
+        fontWeight: fontWeight,
+      )
+      /* Theme.of(context).textTheme.bodyMedium
+              ?.copyWith(color: color, fontWeight: fontWeight), */
     );    
   }
 }

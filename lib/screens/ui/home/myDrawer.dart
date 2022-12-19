@@ -10,7 +10,6 @@ import 'package:shop_of_vehicles/theme/themeChange.dart';
 import 'package:shop_of_vehicles/widgets/text/myText.dart';
 import '../../../models/User.dart';
 
-
 class HomeDrawer extends StatelessWidget {
   HomeDrawer({Key? key, }) : super(key: key);  
 
@@ -45,7 +44,6 @@ class BodyDrawer extends StatelessWidget{
   Widget build(BuildContext context) {
     final appTheme = Provider.of<ThemeChanger>(context);
     final accentColor = appTheme.currentTheme.accentColor;
-
     return Drawer(
       width: 280,
         child: Column(
@@ -53,14 +51,13 @@ class BodyDrawer extends StatelessWidget{
           DrawerHeader(
             padding: const EdgeInsets.fromLTRB(20.0, 25.0, 15.0, 15.0),
             duration: transitionDuration,
-            //decoration: colorsShopOfVehicles(),
             child: Column(
               children: [ 
                 MyBodyMediumText(
                   text: textWelcome + " " + user.name + " " + user.lastName,
-                  color: accentColor, // themeDrawerText,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
-                ),                 
+                ),
                 const SizedBox(height: 5),
                 MyBodyMediumText(
                   text: textWebSite + " " + textWebSiteName,
@@ -90,7 +87,6 @@ class BodyDrawer extends StatelessWidget{
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(1.0, 1.0, 1.0, 1.0),
-            //padding: const EdgeInsets.all(1.0),
             child: SafeArea(            
               child: SizedBox(             
                 width: double.infinity,
