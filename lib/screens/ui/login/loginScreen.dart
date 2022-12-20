@@ -85,105 +85,118 @@ class _LoginFormState extends State<_LoginForm> {
         autovalidateMode: AutovalidateMode.onUserInteraction,
         child: Column(
           children: [
-            TextFormField(
-              autocorrect: false,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                  hintText: textYouEmail,
-                  labelText: textLabelTitleEmail,
-                  prefixIcon: Icons.alternate_email_rounded
-              ),
-              onChanged: (value) => loginForm.email = value,
-              validator: (value) {
-                String pattern = textRegexPatternEmail;
-                RegExp regExp = new RegExp(pattern);
-                return regExp.hasMatch(value ?? '') ? null : textInvalidData;
-              },
-            ),
+            _buildEmail(loginForm),
             SizedBox(height: 30),
-            TextFormField(
-              autocorrect: false,
-              obscureText: passVisible,
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                  enabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: themeInputDecorationLogin),
-                  ),
-                  focusedBorder: const UnderlineInputBorder(
-                      borderSide: BorderSide(color: themeInputDecorationLogin, width: 2)),
-                  hintText: textFormatPassword,
-                  labelText: textLabelTitlePassword,
-                  labelStyle: const TextStyle(color: themeInputDecorationLoginLabel),
-                  prefixIcon: Icons.remove_red_eye_outlined != null
-                      ? Icon(
-                          Icons.remove_red_eye_outlined,
-                          color: themeInputDecorationLogin,
-                        )
-                      : null,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      passVisible 
-                        ? Icons.visibility
-                        : Icons.visibility_off,
-                        //color: Colors.red,
-                    ),
-                    onPressed: (() {
-                      setState(() {
-                        passVisible = !passVisible;
-                      });
-                    })
-                  ),
-              ),
-              onChanged: (value) => loginForm.password = value,
-              validator: (value) {
-                return (value != null && value.length > 6) ? null : textInvalidDataPassword;
-              },
-            ),
+            _buildPassword(loginForm),
             const SizedBox(height: 30),
-            MaterialButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              disabledColor: themeLoginDisableButton,
-              elevation: 0,
-              color: themeLoginSendButton,
-              child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 80,
-                   vertical: 15),
-                  child: Text(
-                    loginForm.isLoading ? 'Ingresando': 'Aceptar' ,                     
-                    style: const TextStyle(color: themeLoginStateProccess),
-                  )), 
-              onPressed: loginForm.isLoading && loginForm.email.length!=0 && loginForm.password.length!=0
-                  ? null
-                  : () {
-                      FocusScope.of(context).unfocus();
-                      if (!loginForm.isValidForm()) return;
-                      Future.delayed(Duration(seconds: 5));
-                      AuthenticationService service = AuthenticationService();
-                      loginForm = service.getLoginUser(loginForm, context);
-                      if(loginForm.isLoading) {
-                        Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage())));
-                      }else{
-                        showDialog(context: context, 
-                          builder: (_) => CustomPopup(
-                              title: textResultErrorLoginTitle,
-                              message: textResultInvalidDataLogin,
-                              buttonAccept: BounceButton(
-                                buttonSize: ButtonSize.small,
-                                type: ButtonType.primary,
-                                label: textButtonShowDialogLogin,
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            )
-                        );                     
-                      }
-                  }                     
-            ),
+            _pressButton(loginForm),
           ],
         ),
       ),      
     );    
   }
+
+  Widget _buildEmail(LoginFormProvider loginForm) {
+    return TextFormField(
+      autocorrect: false,
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecorations.authInputDecoration(
+          hintText: textYouEmail,
+          labelText: textLabelTitleEmail,
+          prefixIcon: Icons.alternate_email_rounded
+      ),
+      onChanged: (value) => loginForm.email = value,
+      validator: (value) {
+        String pattern = textRegexPatternEmail;
+        RegExp regExp = new RegExp(pattern);
+        return regExp.hasMatch(value ?? '') ? null : textInvalidData;
+      },
+    );
+  }
+
+  Widget _buildPassword(LoginFormProvider loginForm) {
+  return TextFormField(
+      autocorrect: false,
+      obscureText: passVisible,
+      keyboardType: TextInputType.text,
+      decoration: InputDecoration(
+          enabledBorder: const UnderlineInputBorder(
+            borderSide: BorderSide(color: themeInputDecorationLogin),
+          ),
+          focusedBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: themeInputDecorationLogin, width: 2)),
+          hintText: textFormatPassword,
+          labelText: textLabelTitlePassword,
+          labelStyle: const TextStyle(color: themeInputDecorationLoginLabel),
+          prefixIcon: Icons.remove_red_eye_outlined != null
+              ? Icon(
+                  Icons.remove_red_eye_outlined,
+                  color: themeInputDecorationLogin,
+                )
+              : null,
+          suffixIcon: IconButton(
+            icon: Icon(
+              passVisible 
+                ? Icons.visibility
+                : Icons.visibility_off,
+                color: themeInputDecorationLogin,
+            ),
+            onPressed: (() {
+              setState(() {
+                passVisible = !passVisible;
+              });
+            })
+          ),
+      ),
+      onChanged: (value) => loginForm.password = value,
+      validator: (value) {
+        return (value != null && value.length > 6) ? null : textInvalidDataPassword;
+      },
+    );
+  }
+
+  Widget _pressButton(LoginFormProvider loginForm){
+    return MaterialButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10)),
+      disabledColor: themeLoginDisableButton,
+      elevation: 0,
+      color: themeLoginSendButton,
+      child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 80,
+            vertical: 15),
+          child: Text(
+            loginForm.isLoading ? 'Ingresando': 'Aceptar' ,                     
+            style: const TextStyle(color: themeLoginStateProccess),
+          )), 
+      onPressed: loginForm.isLoading && loginForm.email.length!=0 && loginForm.password.length!=0
+          ? null
+          : () {
+              FocusScope.of(context).unfocus();
+              if (!loginForm.isValidForm()) return;
+              Future.delayed(Duration(seconds: 5));
+              AuthenticationService service = AuthenticationService();
+              loginForm = service.getLoginUser(loginForm, context);
+              if(loginForm.isLoading) {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) => HeadersPage())));
+              }else{
+                showDialog(context: context, 
+                  builder: (_) => CustomPopup(
+                      title: textResultErrorLoginTitle,
+                      message: textResultInvalidDataLogin,
+                      buttonAccept: BounceButton(
+                        buttonSize: ButtonSize.small,
+                        type: ButtonType.primary,
+                        label: textButtonShowDialogLogin,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    )
+                );                     
+              }
+          }                     
+    );
+  }
 }
+

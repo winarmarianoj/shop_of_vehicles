@@ -152,7 +152,7 @@ class _RegisterFormState extends State<RegisterForm> {
                       passVisible 
                         ? Icons.visibility
                         : Icons.visibility_off,
-                        //color: Colors.red,
+                        color: themeInputDecorationLogin,
                     ),
                     onPressed: (() {
                       setState(() {
