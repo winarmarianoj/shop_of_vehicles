@@ -21,7 +21,7 @@ class InputText extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 130),
+            SizedBox(height: 30),
             Column(
               children: [
                 const SizedBox(height: 10),
@@ -39,7 +39,7 @@ class InputText extends StatelessWidget {
                           keyboardType: TextInputType.text,
                           onChanged: (value) {changeNewAttribute(attribute, value, context);}
                         ), 
-                        const SizedBox(height: 30),
+                        const SizedBox(height: 20),
                         BounceButton(
                           buttonSize: ButtonSize.small, 
                           type: ButtonType.primary, 

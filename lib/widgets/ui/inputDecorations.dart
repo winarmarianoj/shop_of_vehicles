@@ -20,6 +20,7 @@ class InputDecorations {
                 prefixIcon,
                 color: themeInputDecorationLogin,
               )
-            : null);
+            : null,
+    );        
   }
 }

@@ -11,7 +11,12 @@ import 'package:shop_of_vehicles/service/authenticationService.dart';
 import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
 import 'package:shop_of_vehicles/widgets/message/customPopup.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +47,13 @@ class RegisterScreen extends StatelessWidget {
   }
 }
 
-class RegisterForm extends StatelessWidget {  
+class RegisterForm extends StatefulWidget {  
+  @override
+  State<RegisterForm> createState() => _RegisterFormState();
+}
+
+class _RegisterFormState extends State<RegisterForm> {
+  bool passVisible = true;
   @override
   Widget build(BuildContext context) {    
      var registerForm = Provider.of<RegisterFormProvider>(context);     
@@ -119,12 +130,37 @@ class RegisterForm extends StatelessWidget {
             const SizedBox(height: 10),
             TextFormField(
               autocorrect: false,
-              obscureText: true,
+              obscureText: passVisible,
               keyboardType: TextInputType.visiblePassword,
-              decoration: InputDecorations.authInputDecoration(
+              decoration: InputDecoration(
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: themeInputDecorationLogin),
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: themeInputDecorationLogin, width: 2)),
                   hintText: textFormatPassword,
                   labelText: textLabelTitlePassword,
-                  prefixIcon: Icons.remove_red_eye_outlined),
+                  labelStyle: const TextStyle(color: themeInputDecorationLoginLabel),
+                  prefixIcon: Icons.remove_red_eye_outlined != null
+                      ? Icon(
+                          Icons.remove_red_eye_outlined,
+                          color: themeInputDecorationLogin,
+                        )
+                      : null,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      passVisible 
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                        //color: Colors.red,
+                    ),
+                    onPressed: (() {
+                      setState(() {
+                        passVisible = !passVisible;
+                      });
+                    })
+                  ),
+              ),
               onChanged: (value) => registerForm.password = value,
               validator: (value) {
                 return (value != null && value.length > 6) ? null : textInvalidDataPassword; },

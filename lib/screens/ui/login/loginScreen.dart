@@ -13,7 +13,12 @@ import 'package:shop_of_vehicles/service/authenticationService.dart';
 import 'package:shop_of_vehicles/widgets/button/bounceButton.dart';
 import 'package:shop_of_vehicles/widgets/message/customPopup.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +68,13 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class _LoginForm extends StatelessWidget {
+class _LoginForm extends StatefulWidget {
+  @override
+  State<_LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<_LoginForm> {
+  bool passVisible = true;
   @override
   Widget build(BuildContext context) {
     var loginForm = Provider.of<LoginFormProvider>(context);
@@ -80,7 +91,8 @@ class _LoginForm extends StatelessWidget {
               decoration: InputDecorations.authInputDecoration(
                   hintText: textYouEmail,
                   labelText: textLabelTitleEmail,
-                  prefixIcon: Icons.alternate_email_rounded),
+                  prefixIcon: Icons.alternate_email_rounded
+              ),
               onChanged: (value) => loginForm.email = value,
               validator: (value) {
                 String pattern = textRegexPatternEmail;
@@ -91,12 +103,37 @@ class _LoginForm extends StatelessWidget {
             SizedBox(height: 30),
             TextFormField(
               autocorrect: false,
-              obscureText: true,
+              obscureText: passVisible,
               keyboardType: TextInputType.text,
-              decoration: InputDecorations.authInputDecoration(
+              decoration: InputDecoration(
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: themeInputDecorationLogin),
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: themeInputDecorationLogin, width: 2)),
                   hintText: textFormatPassword,
                   labelText: textLabelTitlePassword,
-                  prefixIcon: Icons.remove_red_eye_outlined),
+                  labelStyle: const TextStyle(color: themeInputDecorationLoginLabel),
+                  prefixIcon: Icons.remove_red_eye_outlined != null
+                      ? Icon(
+                          Icons.remove_red_eye_outlined,
+                          color: themeInputDecorationLogin,
+                        )
+                      : null,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      passVisible 
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                        //color: Colors.red,
+                    ),
+                    onPressed: (() {
+                      setState(() {
+                        passVisible = !passVisible;
+                      });
+                    })
+                  ),
+              ),
               onChanged: (value) => loginForm.password = value,
               validator: (value) {
                 return (value != null && value.length > 6) ? null : textInvalidDataPassword;
